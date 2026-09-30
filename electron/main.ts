@@ -1,4 +1,4 @@
-import './utils/env';
+import './utils/bootstrap';
 import { app, BrowserWindow, shell } from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';

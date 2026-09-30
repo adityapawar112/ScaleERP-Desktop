@@ -36,6 +36,15 @@ export class DatabaseManager {
   public async initialize(): Promise<void> {
     return new Promise((resolve, reject) => {
       try {
+        try {
+          const userDataPath = app?.getPath?.('userData');
+          if (userDataPath) {
+            this.dbPath = nodePath.join(userDataPath, 'inventory.db');
+          }
+        } catch (e) {
+          // Keep constructor value if app.getPath fails
+        }
+
         // Create database directory if it doesn't exist
         const dbDir = nodePath.dirname(this.dbPath);
         if (!fs.existsSync(dbDir)) {

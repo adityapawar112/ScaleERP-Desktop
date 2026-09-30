@@ -289,10 +289,15 @@ export class GoogleDriveService {
       if (credentials.refresh_token) {
         this.saveToken(credentials.refresh_token);
       }
-    } catch (error) {
+    } catch (error: any) {
       logger.error('Failed to refresh Google Drive access token:', error);
-      // If refresh fails, we might need to re-authenticate
+      // If refresh fails, clear credentials
       this.oauth2Client.setCredentials({});
+      const errMsg = error?.message || '';
+      if (errMsg.includes('unauthorized_client') || errMsg.includes('invalid_grant')) {
+        logger.warn('Stored Google Drive refresh token is invalid or unauthorized. Clearing stored token.');
+        this.store.delete('refresh_token_encrypted');
+      }
       throw error;
     }
   }
