@@ -56,7 +56,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     <div className="sidebar-container">
       <div className="sidebar-header">
         <div className="d-flex align-items-center mb-3">
-          <img src="./ScaleERPLogo.png" alt="ScaleERP Logo" className="scaleerp-logo me-2" />
+          <img src="./brand/app-icon-square-dark-green.png" alt="ScaleERP Logo" className="scaleerp-logo me-2 rounded-sm" />
           <h3 className="mb-0">{t('navigation.inventoryManagement')}</h3>
         </div>
       </div>
@@ -228,7 +228,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
         <div className="footer-bottom-row">
-          <img src="./LOGO SNOW.png" alt="Ouroscale Logo" className="scaleerp-logo-compact" />
+          <img src="./brand/app-icon-square-dark-green.png" alt="ScaleERP Logo" className="scaleerp-logo-compact rounded-sm" />
           <div className="copyright-text-compact">
             {t('footer.copyright')}
           </div>

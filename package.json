@@ -112,7 +112,7 @@
       "package.json"
     ],
     "win": {
-      "icon": "public/ScaleERPLogo.png",
+      "icon": "public/icon.ico",
       "target": [
         "nsis",
         "portable"
@@ -129,11 +129,11 @@
       "shortcutName": "ScaleERP"
     },
     "mac": {
-      "icon": "public/ScaleERPLogo.png",
+      "icon": "public/brand/app-icon-squircle-green.png",
       "target": "dmg"
     },
     "linux": {
-      "icon": "public/ScaleERPLogo.png",
+      "icon": "public/brand/app-icon-squircle-green.png",
       "target": "AppImage"
     },
     "protocols": {

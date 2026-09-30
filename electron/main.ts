@@ -202,7 +202,7 @@ function createWindow(): BrowserWindow {
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
     },
-    icon: path.join(__dirname, '../public/ScaleERPLogo.png'), // Use Ourofeeds logo
+    icon: path.join(__dirname, process.platform === 'win32' ? '../public/icon.ico' : '../public/brand/app-icon-squircle-green.png'), // Use ScaleERP logo
     show: false, // Don't show until ready-to-show
     titleBarStyle: 'default',
     title: 'ScaleERP', // Set window title

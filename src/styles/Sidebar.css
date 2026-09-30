@@ -2,8 +2,8 @@
 
 .sidebar-container {
   height: 100vh;
-  background-color: #000;
-  color: #fff !important;
+  background-color: var(--brand-dark);
+  color: var(--brand-white) !important;
   padding: 0;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -28,14 +28,17 @@
   padding: 10px 15px;
   border-bottom: 1px solid var(--primary-color);
   flex-shrink: 0;
-  background-color: #000;
+  background-color: var(--brand-dark);
 }
 
 .sidebar-header h3 {
   margin: 0;
   font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff !important;
+  font-weight: 700;
+  font-family: 'Stack Sans Notch', sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  color: var(--brand-white) !important;
 }
 
 .scaleerp-logo {
@@ -71,20 +74,20 @@
 
 .sidebar-nav a:hover {
   background-color: var(--primary-color);
-  color: #fff !important;
+  color: var(--primary-contrast-text) !important;
   border-left: 3px solid var(--primary-dark);
 }
 
 .sidebar-nav a.active {
   background-color: var(--primary-color) !important;
-  color: #fff !important;
+  color: var(--primary-contrast-text) !important;
   border-left: 3px solid var(--primary-darker);
 }
 
 .sidebar-footer {
   padding: 8px 15px;
-  background-color: #000;
-  color: #fff !important;
+  background-color: var(--brand-dark);
+  color: var(--brand-white) !important;
   flex-shrink: 0;
   width: 100%;
   border-top: 1px solid var(--primary-color);
@@ -113,7 +116,7 @@
 
 .copyright-text-compact {
   font-size: 0.7rem;
-  color: #fff;
+  color: var(--brand-white);
   text-align: right;
   flex: 1;
   line-height: 1.2;
@@ -126,12 +129,71 @@
 
 .nav-licensing:hover {
   background-color: var(--primary-color) !important;
-  color: white !important;
+  color: var(--primary-contrast-text) !important;
   border-left: 3px solid var(--primary-dark) !important;
 }
 
 .nav-licensing.active {
-  background-color: var(--primary-dark) !important;
-  color: white !important;
+  background-color: var(--primary-color) !important;
+  color: var(--primary-contrast-text) !important;
   border-left: 3px solid var(--primary-darker) !important;
+}
+
+
+/* Language Switcher Styling in Sidebar */
+.language-switcher {
+  display: inline-block;
+}
+
+.language-switcher .btn,
+#language-dropdown,
+.language-switcher .dropdown-toggle {
+  color: var(--brand-white) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  padding: 0.25rem 0.6rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.language-switcher .btn:hover,
+.language-switcher .btn:focus,
+.language-switcher .btn:active,
+.language-switcher.show > .btn,
+.language-switcher .btn.show,
+#language-dropdown:hover,
+#language-dropdown:focus {
+  color: var(--brand-white) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: none !important;
+}
+
+.language-switcher .dropdown-menu {
+  background-color: var(--brand-dark) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  padding: 4px !important;
+  z-index: 1050;
+}
+
+.language-switcher .dropdown-item {
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  font-size: 0.85rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.language-switcher .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: var(--brand-white) !important;
+}
+
+.language-switcher .dropdown-item.active {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-contrast-text) !important;
+  font-weight: 600 !important;
 }

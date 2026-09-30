@@ -17,7 +17,7 @@
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
-  background: #ffffff;
+  background: var(--surface-card);
   height: 100%;
 }
 
@@ -35,22 +35,22 @@
   height: 100%;
 }
 
-.kpi-inventory::before { background: linear-gradient(to bottom, #4f46e5, #818cf8); }
-.kpi-receivables::before { background: linear-gradient(to bottom, #10b981, #34d399); }
-.kpi-payables::before { background: linear-gradient(to bottom, #ef4444, #f87171); }
-.kpi-sales::before { background: linear-gradient(to bottom, #f59e0b, #fbbf24); }
+.kpi-inventory::before { background: linear-gradient(to bottom, var(--kpi-inventory), var(--kpi-inventory-light)); }
+.kpi-receivables::before { background: linear-gradient(to bottom, var(--kpi-receivables), var(--kpi-receivables-light)); }
+.kpi-payables::before { background: linear-gradient(to bottom, var(--kpi-payables), var(--kpi-payables-light)); }
+.kpi-sales::before { background: linear-gradient(to bottom, var(--kpi-sales), var(--kpi-sales-light)); }
 
 .kpi-label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-bottom: 4px;
 }
 
 .kpi-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   margin: 0;
 }
 
@@ -64,10 +64,10 @@
   margin-bottom: 12px;
 }
 
-.kpi-inventory .kpi-icon-wrapper { background-color: rgba(79, 70, 229, 0.1); color: #4f46e5; }
-.kpi-receivables .kpi-icon-wrapper { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
-.kpi-payables .kpi-icon-wrapper { background-color: rgba(239, 68, 68, 0.1); color: #ef4444; }
-.kpi-sales .kpi-icon-wrapper { background-color: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.kpi-inventory .kpi-icon-wrapper { background-color: rgba(79, 70, 229, 0.1); color: var(--kpi-inventory); }
+.kpi-receivables .kpi-icon-wrapper { background-color: rgba(16, 185, 129, 0.1); color: var(--kpi-receivables); }
+.kpi-payables .kpi-icon-wrapper { background-color: rgba(239, 68, 68, 0.1); color: var(--kpi-payables); }
+.kpi-sales .kpi-icon-wrapper { background-color: rgba(245, 158, 11, 0.1); color: var(--kpi-sales); }
 
 /* Quick Actions */
 .quick-action-btn {
@@ -82,16 +82,16 @@
   font-size: 0.9rem;
   transition: all 0.2s ease;
   height: 100%;
-  border: 1px solid #e5e7eb;
-  background: white;
-  color: #374151;
+  border: 1px solid var(--border-color);
+  background: var(--surface-card);
+  color: var(--text-secondary);
 }
 
 .quick-action-btn:hover {
-  background-color: #f9fafb;
-  border-color: #d1d5db;
+  background-color: var(--primary-rgba-05);
+  border-color: var(--primary-color);
   transform: scale(1.02);
-  color: #2563eb;
+  color: var(--primary-darker);
 }
 
 .quick-action-btn svg {
@@ -103,7 +103,7 @@
   border: none;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  background: #ffffff;
+  background: var(--surface-card);
   padding: 24px;
   height: 100%;
 }
@@ -111,7 +111,7 @@
 .section-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -126,8 +126,8 @@
   padding: 12px;
   border-radius: 10px;
   margin-bottom: 8px;
-  background: #fff;
-  border-left: 3px solid #ef4444;
+  background: var(--surface-card);
+  border-left: 3px solid var(--danger-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
@@ -140,12 +140,12 @@
 .alert-info p {
   margin: 0;
   font-size: 0.8rem;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .alert-badge {
-  background: #fee2e2;
-  color: #b91c1c;
+  background: var(--badge-danger-bg);
+  color: var(--badge-danger-text);
   padding: 4px 8px;
   border-radius: 6px;
   font-size: 0.75rem;
@@ -165,14 +165,14 @@
 .health-score {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(45deg, #10b981, #3b82f6);
+  background: linear-gradient(45deg, var(--brand-primary), var(--brand-primary-tint-1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .health-label {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -182,7 +182,7 @@
   align-items: center;
   gap: 12px;
   padding: 10px 0;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .ranking-item:last-child {
@@ -193,18 +193,18 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #f3f4f6;
+  background: var(--brand-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
-.ranking-item:nth-child(1) .ranking-number { background: #fef3c7; color: #d97706; }
-.ranking-item:nth-child(2) .ranking-number { background: #f3f4f6; color: #4b5563; }
-.ranking-item:nth-child(3) .ranking-number { background: #ffedd5; color: #9a3412; }
+.ranking-item:nth-child(1) .ranking-number { background: var(--ranking-1-bg); color: var(--ranking-1-text); }
+.ranking-item:nth-child(2) .ranking-number { background: var(--ranking-2-bg); color: var(--ranking-2-text); }
+.ranking-item:nth-child(3) .ranking-number { background: var(--ranking-3-bg); color: var(--ranking-3-text); }
 
 .ranking-name {
   flex: 1;
@@ -215,7 +215,7 @@
 .ranking-value {
   font-weight: 700;
   font-size: 0.85rem;
-  color: #111827;
+  color: var(--text-primary);
 }
 
 /* Glassmorphism utility */
@@ -233,11 +233,11 @@
 .dashboard-title {
   font-size: 1.75rem;
   font-weight: 800;
-  color: #111827;
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .dashboard-subtitle {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 1rem;
 }
