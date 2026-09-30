@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP for Wholesale Agricultural Brokers"
 description: "Discover how wholesale brokers scale their operations with automated WhatsApp payment reminders, multi-godown tracking, and deep ledger analytics."
 ---

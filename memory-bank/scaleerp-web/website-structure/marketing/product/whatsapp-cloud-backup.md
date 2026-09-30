@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WhatsApp & Cloud Backups | ScaleERP"
 description: "Automate payment reminders via WhatsApp and secure your offline data with end-of-day cloud backups."
 ---

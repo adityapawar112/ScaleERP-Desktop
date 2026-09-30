@@ -1,4 +1,4 @@
-﻿# Checking Broker Ledgers & Payments
+# Checking Broker Ledgers & Payments
 
 The Broker Ledger is your shop's wholesale accounts book. It shows a complete history of how much stock you purchased on credit from a broker, the commissions (brokerage) they earned, and all the payments you have made to settle the accounts.
 

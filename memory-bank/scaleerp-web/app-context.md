@@ -1,4 +1,4 @@
-﻿# ScaleERP Web & Cloud: Application Context & Integration
+# ScaleERP Web & Cloud: Application Context & Integration
 
 ## 1. Why the Website Exists
 

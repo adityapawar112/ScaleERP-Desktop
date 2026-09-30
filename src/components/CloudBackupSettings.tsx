@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Button, Badge, Alert, Spinner, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { MdCloudDone, MdCloudOff, MdSync, MdVpnKey, MdWarning } from 'react-icons/md';

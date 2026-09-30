@@ -1,4 +1,4 @@
-﻿# Database Backups & Cloud Sync
+# Database Backups & Cloud Sync
 
 To prevent data loss from computer crashes, virus infections, or hardware damage, ScaleERP features automated backups, cloud syncing, and manual restoration tools.
 

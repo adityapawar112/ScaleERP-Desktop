@@ -1,4 +1,4 @@
-﻿# Responding to Low Stock Alerts
+# Responding to Low Stock Alerts
 
 To ensure your shop never runs out of popular feed bags and loses sales, ScaleERP actively monitors your inventory levels and alerts you when stock runs low.
 

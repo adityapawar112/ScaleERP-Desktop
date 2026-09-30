@@ -1,4 +1,4 @@
-﻿# Reviewing Stock History & Ledger Adjustments
+# Reviewing Stock History & Ledger Adjustments
 
 In ScaleERP, stock quantities are updated automatically by your everyday transactions, ensuring your records are always accurate and matching your physical godown.
 

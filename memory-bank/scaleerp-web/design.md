@@ -1,4 +1,4 @@
-﻿# ScaleERP Web Design System & Brand Guidelines
+# ScaleERP Web Design System & Brand Guidelines
 *(With ScaleERP Parent Architecture Integration)*
 
 ## 1. ScaleERP Product Ideology & Philosophy (80% Core Focus)

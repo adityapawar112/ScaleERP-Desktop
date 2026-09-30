@@ -1,4 +1,4 @@
-﻿# Database Operations Documentation
+# Database Operations Documentation
 
 Complete reference for all CRUD operations and utility functions available in the ScaleERP database layer. These are accessible via `window.electronAPI.database` in the renderer process.
 

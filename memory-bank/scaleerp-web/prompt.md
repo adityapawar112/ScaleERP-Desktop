@@ -1,4 +1,4 @@
-﻿# Master Prompts: Building the ScaleERP Web Platform & Licensing Engine
+# Master Prompts: Building the ScaleERP Web Platform & Licensing Engine
 
 You are tasked with building the **ScaleERP Web App & Licensing Hub (`scaleerp-web`)**. This is a standalone Next.js application that serves as the marketing portal, SEO blog engine, user/operator documentation hub, and cryptographic license authority for the ScaleERP desktop application.
 

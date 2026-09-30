@@ -1,4 +1,4 @@
-﻿# ScaleERP Vendor Operations Guide (Internal)
+# ScaleERP Vendor Operations Guide (Internal)
 
 This guide is for the Ouroscale development and support team to manage the licensing lifecycle and handle customer support for the ScaleERP desktop application.
 

@@ -1,4 +1,4 @@
-﻿# Backend Overview — Electron Architecture
+# Backend Overview — Electron Architecture
 
 The ScaleERP backend is built on Electron, providing a secure, cross-platform desktop runtime with SQLite for local data persistence.
 

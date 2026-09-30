@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Invoice Customization | ScaleERP"
 description: "Professional A4 and thermal printing with native Marathi language support."
 ---

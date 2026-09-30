@@ -1,4 +1,4 @@
-﻿import sqlite3 from 'sqlite3';
+import sqlite3 from 'sqlite3';
 import * as nodePath from 'path';
 import * as fs from 'fs';
 import { app } from 'electron';

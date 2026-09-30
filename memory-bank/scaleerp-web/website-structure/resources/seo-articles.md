@@ -1,4 +1,4 @@
-﻿---
+---
 title: "SEO Articles & Long-Tail Content"
 description: "A repository of SEO-optimized article outlines targeting high-intent agricultural software keywords in India."
 ---

@@ -1,4 +1,4 @@
-﻿# Google Drive Cloud Sync Documentation
+# Google Drive Cloud Sync Documentation
 
 The `GoogleDriveService` manages automated and manual synchronization of database backups to a user's Google Drive account.
 

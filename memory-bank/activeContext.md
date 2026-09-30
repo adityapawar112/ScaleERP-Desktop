@@ -1,4 +1,4 @@
-﻿# Active Context - 2026-05-19
+# Active Context - 2026-05-19
 
 ## Current Focus
 - Verification of developer tools licensing workflows and preparing for next task assignments.

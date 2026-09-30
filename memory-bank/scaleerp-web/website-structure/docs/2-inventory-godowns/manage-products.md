@@ -1,4 +1,4 @@
-﻿# Managing Feed Products & Manufacturers
+# Managing Feed Products & Manufacturers
 
 This guide will show you how to add new feed items, add manufacturers (the companies that make the feed), and edit their names when details change.
 

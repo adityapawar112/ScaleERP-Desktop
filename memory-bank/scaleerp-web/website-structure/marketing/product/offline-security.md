@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Offline Security & Architecture | ScaleERP"
 description: "Military-grade RSA licensing and 100% offline-first SQLite WAL performance for total data security."
 ---

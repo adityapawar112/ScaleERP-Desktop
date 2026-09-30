@@ -1,4 +1,4 @@
-﻿# Managing Invoices & Sales History
+# Managing Invoices & Sales History
 
 Every retail transaction is logged in your sales history. This guide will show you how to search past bills, print invoice copies, delete incorrect transactions, and export your history to Excel.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP for Retail Feed Stores"
 description: "Discover how ScaleERP manages the chaos of the retail checkout counter with lightning-fast offline billing and easy ledger management."
 ---

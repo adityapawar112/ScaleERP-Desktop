@@ -1,4 +1,4 @@
-﻿# Creating and Managing Customer Profiles
+# Creating and Managing Customer Profiles
 
 ScaleERP tracks all your customers' details, outstanding balances, and payment histories. This guide will show you how to add, edit, and delete customer profiles.
 

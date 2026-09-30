@@ -1,4 +1,4 @@
-﻿// scripts/validate-license-phase2.cjs
+// scripts/validate-license-phase2.cjs
 const fs = require('fs');
 const os = require('os');
 const path = require('path');

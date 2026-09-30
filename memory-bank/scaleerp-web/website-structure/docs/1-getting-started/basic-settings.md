@@ -1,4 +1,4 @@
-﻿# Setting Up Your Shop Details & Bill Templates
+# Setting Up Your Shop Details & Bill Templates
 
 Before you start billing customers, you must enter your shop's official details and customize how your invoices look. 
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP vs. Legacy ERPs"
 description: "See how ScaleERP compares to legacy accounting software like Tally and Marg. Built for the counter, not the accountant."
 ---

@@ -1,4 +1,4 @@
-﻿# Database Schema Documentation
+# Database Schema Documentation
 
 Complete reference for the ScaleERP database schema, including all tables, relationships, indexes, and constraints.
 

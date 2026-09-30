@@ -1,4 +1,4 @@
-﻿# Tech Context - ScaleERP
+# Tech Context - ScaleERP
 
 ## Technology Stack
 - **Framework**: Electron (v14+)

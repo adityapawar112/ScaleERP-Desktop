@@ -1,4 +1,4 @@
-﻿/**
+/**
  * License UI types for ScaleERP licensing frontend.
  * Mirrors and extends the backend LicenseStatus for UI consumption.
  */

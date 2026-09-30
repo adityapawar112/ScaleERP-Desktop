@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Ledger Management | ScaleERP"
 description: "Flawless party management, instant dues tracking, and one-click settlements for wholesale and retail."
 ---

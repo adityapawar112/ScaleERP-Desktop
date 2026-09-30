@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Inventory Tracking | ScaleERP"
 description: "Real-time godown tracking, instant stock audits, and low-stock alerts for agricultural businesses."
 ---

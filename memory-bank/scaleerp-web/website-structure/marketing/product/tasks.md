@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP Tasks"
 description: "Automate your daily operations with WhatsApp integration and secure end-of-day cloud backups."
 ---

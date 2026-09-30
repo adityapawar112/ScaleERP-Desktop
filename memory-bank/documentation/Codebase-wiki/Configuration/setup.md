@@ -1,4 +1,4 @@
-﻿# Development Setup Guide
+# Development Setup Guide
 
 Complete guide for setting up the ScaleERP development environment.
 

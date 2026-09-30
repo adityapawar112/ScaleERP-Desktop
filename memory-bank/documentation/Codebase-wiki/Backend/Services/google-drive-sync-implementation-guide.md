@@ -1,4 +1,4 @@
-﻿# Robust Google Drive Cloud Sync & Automated Backup Architecture for Electron Applications
+# Robust Google Drive Cloud Sync & Automated Backup Architecture for Electron Applications
 
 This guide provides an end-to-end architectural explanation and implementation manual for adding secure, resilient Google Drive cloud backup synchronization to any Electron desktop application. 
 

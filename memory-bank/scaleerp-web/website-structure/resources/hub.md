@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP Knowledge Hub"
 description: "Expert advice, guides, and industry insights for scaling your agricultural feed and wholesale business."
 ---

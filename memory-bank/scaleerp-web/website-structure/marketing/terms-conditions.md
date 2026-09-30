@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Terms & Conditions | ScaleERP"
 description: "ScaleERP Terms and Conditions of use."
 ---

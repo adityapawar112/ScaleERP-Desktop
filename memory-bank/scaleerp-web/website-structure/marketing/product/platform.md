@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP Platform"
 description: "Explore the core engine of ScaleERP: Lightning-fast offline inventory and flawless ledger management."
 ---

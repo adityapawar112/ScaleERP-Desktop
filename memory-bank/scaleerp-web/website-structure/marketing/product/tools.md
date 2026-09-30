@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP Tools"
 description: "Professional invoice customization and deep business reporting for Indian agricultural distributors."
 ---

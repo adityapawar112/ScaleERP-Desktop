@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Contact ScaleERP"
 description: "Get in touch with the ScaleERP team for sales, support, and offline inventory setup."
 ---

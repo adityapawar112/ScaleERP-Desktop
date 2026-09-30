@@ -1,4 +1,4 @@
-﻿# Archiving and Restoring Inventory Items
+# Archiving and Restoring Inventory Items
 
 This guide explains how to hide feed bags and manufacturers that you no longer sell, and how to bring them back if you start selling them again.
 

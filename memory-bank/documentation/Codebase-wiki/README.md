@@ -1,4 +1,4 @@
-﻿# ScaleERP Inventory Management System - Codebase Wiki
+# ScaleERP Inventory Management System - Codebase Wiki
 
 Welcome to the comprehensive technical documentation for the ScaleERP Inventory Management System.
 

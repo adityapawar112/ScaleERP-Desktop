@@ -1,4 +1,4 @@
-﻿# ScaleERP Web & Cloud Licensing Backend Architecture
+# ScaleERP Web & Cloud Licensing Backend Architecture
 
 ## Architectural Overview
 

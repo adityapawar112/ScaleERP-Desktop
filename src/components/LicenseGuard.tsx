@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLicense } from '../context/LicenseContext';
 import type { LicenseGuardProps } from '../types/license';

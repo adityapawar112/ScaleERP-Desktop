@@ -1,4 +1,4 @@
-﻿// electron/services/licenseEnforcement.ts
+// electron/services/licenseEnforcement.ts
 import { LicenseManager } from './licenseManager';
 
 /**

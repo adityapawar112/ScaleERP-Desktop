@@ -1,4 +1,4 @@
-﻿# Database Documentation
+# Database Documentation
 
 ScaleERP uses SQLite with Write-Ahead Logging (WAL) mode for high-performance, reliable local data storage.
 

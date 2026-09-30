@@ -1,4 +1,4 @@
-﻿# Product Context: ScaleERP Inventory Management System
+# Product Context: ScaleERP Inventory Management System
 
 ## Why This Project Exists
 

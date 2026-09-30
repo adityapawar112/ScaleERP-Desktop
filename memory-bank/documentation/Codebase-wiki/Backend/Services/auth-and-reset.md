@@ -1,4 +1,4 @@
-﻿# Authentication & Password Reset Documentation
+# Authentication & Password Reset Documentation
 
 The ScaleERP backend provides a secure user authentication layer with encrypted session persistence and an offline, support-assisted password recovery mechanism.
 

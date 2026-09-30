@@ -1,4 +1,4 @@
-﻿# Creating and Managing Broker Profiles
+# Creating and Managing Broker Profiles
 
 Brokers are the suppliers or distributors from whom you purchase bulk feed stock. ScaleERP helps you track what you owe them and what commission (brokerage) they earn.
 

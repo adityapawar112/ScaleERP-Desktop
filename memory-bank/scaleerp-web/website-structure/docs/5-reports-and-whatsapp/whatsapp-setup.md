@@ -1,4 +1,4 @@
-﻿# WhatsApp Reminders & Custom Presets
+# WhatsApp Reminders & Custom Presets
 
 ScaleERP allows you to send personalized payment reminders, balance warnings, and greetings directly to your customers and brokers over WhatsApp without retyping their details.
 

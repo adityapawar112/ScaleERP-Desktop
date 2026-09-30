@@ -1,4 +1,4 @@
-﻿# System Patterns - ScaleERP
+# System Patterns - ScaleERP
 
 ## Architecture Overview
 ScaleERP is a desktop-first application built with Electron, React, and TypeScript. It follows a modular service-based architecture for core functionalities like Database, Security, and Cloud Sync.

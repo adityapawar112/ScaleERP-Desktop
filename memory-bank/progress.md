@@ -1,4 +1,4 @@
-﻿# Progress - ScaleERP
+# Progress - ScaleERP
 
 ## What Works
 - [x] Flawless Full-Stack I18n & Localization Refactoring (100% Key Parity across 594+ Keys in Phase 1-5)

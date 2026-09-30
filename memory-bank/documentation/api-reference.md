@@ -1,4 +1,4 @@
-﻿# API Reference: ScaleERP Inventory Management System
+# API Reference: ScaleERP Inventory Management System
 
 ## Overview
 

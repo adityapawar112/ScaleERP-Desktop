@@ -1,4 +1,4 @@
-﻿# Installation, License Activation & Login
+# Installation, License Activation & Login
 
 This guide will help you install the ScaleERP application, activate your offline business license, and log in to your shop's dashboard for the first time.
 

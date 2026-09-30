@@ -20,5 +20,9 @@ export default defineConfig({
       }
     }
   },
-  base: './' // Important for Electron - use relative paths
+  base: './', // Important for Electron - use relative paths
+  test: {
+    include: ['electron/__tests__/**/*.test.ts', 'src/__tests__/**/*.test.{ts,tsx}'],
+    exclude: ['build-electron/**', 'node_modules/**', 'scripts/**']
+  }
 })

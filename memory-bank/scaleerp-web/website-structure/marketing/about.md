@@ -1,4 +1,4 @@
-﻿---
+---
 title: "About ScaleERP"
 description: "Learn about the mission behind ScaleERP and our commitment to empowering India's agricultural businesses."
 ---

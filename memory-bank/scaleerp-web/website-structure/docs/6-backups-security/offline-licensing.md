@@ -1,4 +1,4 @@
-﻿# Offline Licensing & Security Key Management
+# Offline Licensing & Security Key Management
 
 ScaleERP operates fully offline without requiring a permanent internet connection. However, it requires a valid license key bounded to your specific computer hardware.
 

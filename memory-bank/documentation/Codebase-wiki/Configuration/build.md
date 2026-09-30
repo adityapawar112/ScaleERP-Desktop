@@ -1,4 +1,4 @@
-﻿# Build & Distribution Guide
+# Build & Distribution Guide
 
 Complete guide for building and distributing the ScaleERP application.
 

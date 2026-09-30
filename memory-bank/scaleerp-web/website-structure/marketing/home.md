@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP Home Page"
 description: "High-converting, SEO-optimized marketing copy for ScaleERP Home Page"
 ---

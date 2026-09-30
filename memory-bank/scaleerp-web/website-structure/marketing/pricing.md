@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ScaleERP Pricing"
 description: "Transparent, hardware-bound licensing for ScaleERP desktop inventory management."
 ---

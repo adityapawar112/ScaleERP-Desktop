@@ -1,4 +1,4 @@
-﻿# Generating Reports and Auditing Accounts
+# Generating Reports and Auditing Accounts
 
 The **Reports** dashboard is where you audit your business health, check stock movements, and verify outstanding account books across customers and suppliers.
 

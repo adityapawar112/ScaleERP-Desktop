@@ -1,4 +1,4 @@
-﻿# Common Errors & How to Solve Them
+# Common Errors & How to Solve Them
 
 This guide lists the common alerts and warnings you might see in ScaleERP and how to solve them easily.
 

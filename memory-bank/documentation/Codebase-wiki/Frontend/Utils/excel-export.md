@@ -1,4 +1,4 @@
-﻿# Excel Export Utility Documentation
+# Excel Export Utility Documentation
 
 The Excel export utility provides professional Excel file generation for various data types in the ScaleERP application.
 

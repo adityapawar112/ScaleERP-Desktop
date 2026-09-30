@@ -1,4 +1,4 @@
-﻿# Frequently Asked Questions (FAQs)
+# Frequently Asked Questions (FAQs)
 
 Here are answers to the most common questions about using ScaleERP.
 

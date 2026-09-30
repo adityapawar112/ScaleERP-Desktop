@@ -1,4 +1,4 @@
-﻿# License Testing Guide
+# License Testing Guide
 
 Quick reference for generating and testing licenses in ScaleERP.
 

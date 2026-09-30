@@ -1,4 +1,4 @@
-﻿# Business Logic & Calculations
+# Business Logic & Calculations
 
 This document centralizes all mathematical formulas and logical protocols used in the ScaleERP database layer.
 

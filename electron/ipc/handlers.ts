@@ -1,4 +1,4 @@
-﻿import { ipcMain, app, IpcMainInvokeEvent } from 'electron';
+import { ipcMain, app, IpcMainInvokeEvent } from 'electron';
 import * as fs from 'fs/promises';
 import { logger } from '../services/logger';
 import * as path from 'path';

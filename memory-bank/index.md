@@ -1,4 +1,4 @@
-﻿# ScaleERP Memory Bank Index
+# ScaleERP Memory Bank Index
 
 Welcome to the **ScaleERP** documentation index. This central hub provides exhaustive links and metadata for all project documentation.
 

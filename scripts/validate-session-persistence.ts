@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/validate-session-persistence.ts
  *
  * Validation script for Phase 5 session persistence across restarts.

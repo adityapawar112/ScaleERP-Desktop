@@ -1,4 +1,4 @@
-﻿# Development Timeline: ScaleERP Inventory Management System
+# Development Timeline: ScaleERP Inventory Management System
 
 ## Project Overview
 

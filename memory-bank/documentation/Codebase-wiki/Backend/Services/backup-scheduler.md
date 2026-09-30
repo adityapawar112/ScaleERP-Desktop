@@ -1,4 +1,4 @@
-﻿# Backup Scheduler Documentation
+# Backup Scheduler Documentation
 
 The Backup Scheduler provides automated database backup functionality using `node-cron` for scheduling.
 

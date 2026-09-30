@@ -1,4 +1,4 @@
-﻿# ScaleERP - Inventory Management System
+# ScaleERP - Inventory Management System
 
 A comprehensive desktop inventory management solution designed for small to medium businesses. Built with modern React technologies and Electron, featuring advanced analytics, multi-language support, and comprehensive reporting capabilities. Manage products, track transactions, monitor business performance, and export data seamlessly.
 

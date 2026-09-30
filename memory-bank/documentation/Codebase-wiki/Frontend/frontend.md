@@ -1,4 +1,4 @@
-﻿# Frontend Overview — React Architecture
+# Frontend Overview — React Architecture
 
 The ScaleERP frontend is built with React 19, TypeScript, and Bootstrap 5, providing a responsive, user-friendly interface for inventory management, secured by a dedicated Licensing layer.
 

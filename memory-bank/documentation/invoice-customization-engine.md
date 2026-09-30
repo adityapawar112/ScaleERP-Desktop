@@ -1,4 +1,4 @@
-﻿# Advanced Invoice & Customization Engine Architecture
+# Advanced Invoice & Customization Engine Architecture
 
 This document explains the design, architecture, and step-by-step implementation of the ScaleERP Advanced Invoice & Customization Engine. It is structured to serve as an integration blueprint for developers wishing to implement a similar customizable invoice system in any web or desktop application with billing.
 

@@ -1,4 +1,4 @@
-﻿// scripts/validate-license-phase5-auth-foundation.cjs
+// scripts/validate-license-phase5-auth-foundation.cjs
 const fs = require('fs');
 const os = require('os');
 const path = require('path');

@@ -1,4 +1,4 @@
-﻿# Checking Customer Ledgers & Payments
+# Checking Customer Ledgers & Payments
 
 The Customer Ledger is your shop's "Khata" book. It shows a complete history of how much credit a customer has taken, what payments they have made, and their current outstanding balance.
 

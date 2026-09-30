@@ -1,4 +1,4 @@
-﻿# RSA Key Rotation SOP (Standard Operating Procedure)
+# RSA Key Rotation SOP (Standard Operating Procedure)
 
 This document outlines the procedure for rotating the RSA key pair used by the ScaleERP licensing system. Key rotation is necessary if the private key is suspected of being compromised or as part of a regular security lifecycle.
 

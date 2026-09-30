@@ -1,4 +1,4 @@
-﻿// src/pages/LoginScreen.tsx
+// src/pages/LoginScreen.tsx
 import React, { useState } from 'react';
 import {
   Alert,

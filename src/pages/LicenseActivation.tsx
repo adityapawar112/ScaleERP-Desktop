@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useLicense } from '../context/LicenseContext';
 import { Modal, Button, Form, Alert } from 'react-bootstrap';
 import type { LicenseActivationProps } from '../types/license';

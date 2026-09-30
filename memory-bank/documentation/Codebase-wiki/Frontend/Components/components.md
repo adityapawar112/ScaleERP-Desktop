@@ -1,4 +1,4 @@
-﻿# Shared Components Documentation
+# Shared Components Documentation
 
 The ScaleERP application includes modular, shared components that provide reusable UI functionality and central security enforcement across the interface.
 

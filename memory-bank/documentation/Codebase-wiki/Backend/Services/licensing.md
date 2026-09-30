@@ -1,4 +1,4 @@
-﻿# Licensing Service Documentation
+# Licensing Service Documentation
 
 The ScaleERP licensing system provides a robust, offline-capable verification layer based on RSA-2048 cryptography and multi-stage enforcement logic.
 

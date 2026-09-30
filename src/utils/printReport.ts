@@ -1,4 +1,4 @@
-﻿import { ReportData } from '../types/reports';
+import { ReportData } from '../types/reports';
 import { BusinessSettings } from '../context/AppContext';
 
 /**

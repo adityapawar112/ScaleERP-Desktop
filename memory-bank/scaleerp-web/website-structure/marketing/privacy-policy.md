@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Privacy Policy | ScaleERP"
 description: "ScaleERP Privacy Policy. Learn how we protect your offline data."
 ---

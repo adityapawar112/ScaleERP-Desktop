@@ -1,4 +1,4 @@
-﻿# Pages Documentation
+# Pages Documentation
 
 The ScaleERP application includes localized pages mapped by React Router functioning securely underneath the `LicenseGuard` structure.
 

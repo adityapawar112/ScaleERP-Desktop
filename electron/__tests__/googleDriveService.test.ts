@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 // Mock Electron FIRST
 vi.mock('electron', () => ({
@@ -127,6 +127,8 @@ describe('GoogleDriveService (Non-Superficial)', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    process.env.GOOGLE_CLIENT_ID = 'mock-google-client-id';
+    process.env.GOOGLE_CLIENT_SECRET = 'mock-google-client-secret';
     service = GoogleDriveService.getInstance();
     
     // Ensure state is set for tests
@@ -141,7 +143,9 @@ describe('GoogleDriveService (Non-Superficial)', () => {
   describe('Authentication Integrity', () => {
     it('should generate auth URL correctly', async () => {
       await service.login();
+      await new Promise((resolve) => setTimeout(resolve, 50));
       expect(vi.mocked(shell.openExternal)).toHaveBeenCalledWith(expect.stringContaining('https://mock-auth-url.com'));
+      (service as any).cleanupAuthServer();
     });
 
     it('should handle OAuth callback and secure the token with encryption', async () => {

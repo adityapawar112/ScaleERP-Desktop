@@ -1,4 +1,4 @@
-﻿/**
+/**
  * scripts/validate-password-reset.ts
  *
  * Validation script for Phase 5 offline password reset flow.

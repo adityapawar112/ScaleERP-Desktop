@@ -1,4 +1,4 @@
-﻿# Project Brief: ScaleERP Inventory Management System
+# Project Brief: ScaleERP Inventory Management System
 
 ## Project Identity
 - **Name**: ScaleERP

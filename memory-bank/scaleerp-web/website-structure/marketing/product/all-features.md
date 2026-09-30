@@ -1,4 +1,4 @@
-﻿---
+---
 title: "All Features | ScaleERP"
 description: "A complete feature breakdown of ScaleERP: offline inventory, ledger management, WhatsApp automation, and more."
 ---
