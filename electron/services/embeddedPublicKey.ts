@@ -1,0 +1,12 @@
+// electron/services/embeddedPublicKey.ts
+export const EMBEDDED_LICENSE_PUBLIC_KEYS: Record<string, string> = {
+  key_001: `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwJPi5iOODegciGvRQMiD
+VMhbwFHp3umWFG5RgoAY3uyymcPS6vOaRMvrlIS5hqKSCP0quZqv8VxLLmcDbjFF
+eOK70KYRx8NvlB0F2w4bTLfZQeKrCeYf3yo2skg0PRznWRLYNQ/fJBz1vpjIy3lU
+Xq5zUjcoNsD4x6sH5Ux7qs3tyTAnbwzIgT+O2K+6Ar6oX6HWdgP0z5t3Ljjlwstd
+RSWAaAbFD+X9ala4pIfoEi9DaLg4fm80Ax75b03YEJHyRkpOTlp6zh7EmzRlp7HC
+b5JlMu7MRCeiMCcmDlV2MahVfQmDp83xm+e0nRUTPu98ISrbDx/+IAsrSO32ntS1
+twIDAQAB
+-----END PUBLIC KEY-----`,
+};

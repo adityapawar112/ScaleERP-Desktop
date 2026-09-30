@@ -1,0 +1,137 @@
+﻿/* CSS variables are now defined in src/index.css to maintain a single source of truth */
+
+.sidebar-container {
+  height: 100vh;
+  background-color: #000;
+  color: #fff !important;
+  padding: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Fixed width for better reliability */
+  z-index: 1000;
+  overflow: hidden;
+  /* Ensure proper rendering in Chrome and other WebKit browsers */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Prevent any potential layout shifts */
+  will-change: auto;
+  /* Ensure visibility in all browsers */
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--primary-color);
+  flex-shrink: 0;
+  background-color: #000;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.scaleerp-logo {
+  height: 45px;
+  width: auto;
+}
+
+.sidebar-nav {
+  padding: 15px 0;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 15px;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Section separators */
+.sidebar-nav .section-separator {
+  height: 2px;
+  background-color: var(--primary-color);
+  margin: 8px 20px;
+  border: none;
+}
+
+.sidebar-nav a:hover {
+  background-color: var(--primary-color);
+  color: #fff !important;
+  border-left: 3px solid var(--primary-dark);
+}
+
+.sidebar-nav a.active {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+  border-left: 3px solid var(--primary-darker);
+}
+
+.sidebar-footer {
+  padding: 8px 15px;
+  background-color: #000;
+  color: #fff !important;
+  flex-shrink: 0;
+  width: 100%;
+  border-top: 1px solid var(--primary-color);
+  margin-top: auto;
+}
+
+.language-switcher-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.scaleerp-logo-compact {
+  height: 35px;
+  width: auto;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.copyright-text-compact {
+  font-size: 0.7rem;
+  color: #fff;
+  text-align: right;
+  flex: 1;
+  line-height: 1.2;
+}
+
+/* Licensing nav link */
+.nav-licensing {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.nav-licensing:hover {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-left: 3px solid var(--primary-dark) !important;
+}
+
+.nav-licensing.active {
+  background-color: var(--primary-dark) !important;
+  color: white !important;
+  border-left: 3px solid var(--primary-darker) !important;
+}
