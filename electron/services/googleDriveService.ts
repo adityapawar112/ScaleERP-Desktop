@@ -30,11 +30,11 @@ export class GoogleDriveService {
   private initializationPromise: Promise<void> | null = null;
   private events = new EventEmitter();
   
-  // Scopes for Google Drive API and User Profile
+  // Scopes for Google Drive API and User Profile (modern OIDC scopes)
   private readonly SCOPES = [
     'https://www.googleapis.com/auth/drive.file',
-    'https://www.googleapis.com/auth/userinfo.email',
-    'https://www.googleapis.com/auth/userinfo.profile',
+    'email',
+    'profile',
     'openid'
   ];
   
@@ -100,10 +100,10 @@ export class GoogleDriveService {
   /**
    * Start the OAuth2 login flow
    */
-  public async login(): Promise<void> {
+  public async login(): Promise<{ success: boolean; authUrl?: string }> {
     if (this.isLoggingIn) {
       logger.warn('Login already in progress, ignoring duplicate request.');
-      return;
+      return { success: false };
     }
 
     this.isLoggingIn = true;
@@ -200,6 +200,7 @@ export class GoogleDriveService {
       }, 5 * 60 * 1000);
 
       logger.info('Opening system browser for Google Drive authentication.');
+      return { success: true, authUrl };
     } catch (error) {
       this.isLoggingIn = false;
       logger.error('Failed to initiate login:', error);

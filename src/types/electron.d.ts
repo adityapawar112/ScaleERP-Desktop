@@ -299,7 +299,7 @@ export interface ElectronAPI {
 
   // Google Drive Cloud Backup
   googleDrive: {
-    login: () => Promise<void>;
+    login: () => Promise<{ success: boolean; authUrl?: string } | void>;
     logout: () => Promise<void>;
     getStatus: () => Promise<any>;
     processQueue: () => Promise<void>;

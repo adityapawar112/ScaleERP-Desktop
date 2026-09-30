@@ -9,6 +9,8 @@ const CloudBackupSettings: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [syncing, setSyncing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [authUrl, setAuthUrl] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const fetchStatus = async () => {
     try {
@@ -28,6 +30,7 @@ const CloudBackupSettings: React.FC = () => {
 
     // Listen for auth events
     const cleanupSuccess = window.electronAPI?.googleDriveEvents?.onAuthSuccess(() => {
+      setAuthUrl(null);
       fetchStatus();
     });
 
@@ -46,7 +49,10 @@ const CloudBackupSettings: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      await window.electronAPI?.googleDrive.login();
+      const res = await window.electronAPI?.googleDrive.login();
+      if (res && typeof res === 'object' && res.authUrl) {
+        setAuthUrl(res.authUrl);
+      }
     } catch (err: any) {
       setError(err.message);
       setLoading(false);
@@ -109,6 +115,29 @@ const CloudBackupSettings: React.FC = () => {
         {error && (
           <Alert variant="danger" onClose={() => setError(null)} dismissible>
             <MdWarning className="me-2 mb-1" /> {error}
+          </Alert>
+        )}
+
+        {authUrl && !status?.connected && (
+          <Alert variant="info" className="mb-4 d-flex justify-content-between align-items-center">
+            <div className="me-3">
+              <strong>Google Sign-In Initiated</strong>
+              <div className="small text-muted mt-1">
+                If your default browser blocks Google OAuth session cookies with <em>"Something went wrong"</em> (common in Firefox with Enhanced Tracking Protection), copy this link and open it in Chrome or Edge:
+              </div>
+            </div>
+            <Button
+              variant={copied ? 'success' : 'primary'}
+              size="sm"
+              className="text-nowrap"
+              onClick={() => {
+                navigator.clipboard.writeText(authUrl);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 3000);
+              }}
+            >
+              {copied ? 'Copied!' : 'Copy Login Link'}
+            </Button>
           </Alert>
         )}
 
