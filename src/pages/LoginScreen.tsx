@@ -147,15 +147,38 @@ const LoginScreen: React.FC<LoginScreenProps> = ({
         <Col md={6} lg={4}>
           <Card className="shadow-sm border-0">
             <Card.Body className="p-4">
-              <div className="text-center mb-3">
-                <img
-                  src="./ScaleERPLogo.png"
-                  alt="ScaleERP"
-                  style={{ width: 56, height: 56, objectFit: 'contain' }}
-                />
-                <h4 className="mt-3 mb-1">{t('auth.signIn', 'Sign in')}</h4>
-                <p className="text-muted mb-0" style={{ fontSize: '0.92rem' }}>
-                  {t('auth.authSubtitle', 'Inventory Management Authentication')}
+              <div className="text-center mb-4">
+                <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
+                  <img
+                    src="./brand/logomark-icon-green.png"
+                    alt="ScaleERP"
+                    style={{ width: 36, height: 36, objectFit: 'contain' }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: "'Stack Sans Notch', 'Outfit', sans-serif",
+                      fontWeight: 800,
+                      fontSize: '26px',
+                      color: '#171717',
+                      letterSpacing: '-0.02em',
+                    }}
+                  >
+                    ScaleERP
+                  </span>
+                </div>
+                <h4
+                  className="mb-1"
+                  style={{
+                    fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 600,
+                    fontSize: '18px',
+                    color: '#1e293b',
+                  }}
+                >
+                  {t('auth.signIn', 'Sign in')}
+                </h4>
+                <p className="text-muted mb-0" style={{ fontSize: '0.86rem' }}>
+                  {t('setup.brandSubtitle', 'Fast billing and inventory management')}
                 </p>
               </div>
 

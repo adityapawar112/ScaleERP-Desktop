@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron';
+import { BrowserWindow, app } from 'electron';
 import * as cron from 'node-cron';
 import { LicenseManager, LicenseStatus } from './licenseManager';
 import { logHeartbeat, getRecentHeartbeats } from '../database/licenseOperations';
@@ -204,6 +204,57 @@ export class LicenseScheduler {
         currentFingerprint: getDeviceFingerprint()
       });
       logger.security('Clock tampering detected during heartbeat');
+    }
+
+    // Opportunistically sync heartbeat with cloud server when online
+    this.syncCloudHeartbeat().catch(() => {});
+  }
+
+  /**
+   * Sync heartbeat with ScaleERP Web server when internet is available.
+   * Silently catches errors if offline or server is unreachable.
+   */
+  private async syncCloudHeartbeat(): Promise<void> {
+    try {
+      const status = this.licenseManager.getStatus();
+      if (!status?.valid || !status.payload) return;
+
+      const baseUrl = process.env.SCALEERP_API_URL || process.env.VITE_API_URL || 'http://localhost:3000';
+      const os = await import('os');
+
+      const response = await fetch(`${baseUrl}/api/v1/licensing/sync-heartbeat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          activationKey: status.payload.license_id,
+          deviceFingerprint: getDeviceFingerprint(),
+          clientSystemTime: new Date().toISOString(),
+          appVersion: app?.getVersion ? app.getVersion() : '1.0.0',
+          osHostname: os.hostname(),
+          licenseState: status.state,
+          localDatabaseState: {
+            reportedValidFrom: status.payload.valid_from,
+            reportedValidUntil: status.payload.valid_until,
+            reportedMaintenanceUntil: status.payload.maintenance_until,
+          },
+        }),
+      });
+
+      if (!response.ok) return;
+      const data = await response.json();
+
+      if (data?.securityLockout) {
+        this.mainWindow.webContents.send('clock-tamper-detected', {
+          timestamp: new Date().toISOString(),
+          currentFingerprint: getDeviceFingerprint(),
+        });
+        logger.security('Security lockout returned by cloud licensing server');
+      } else if (data?.isLicenseUpdated && data?.updatedLicenseBlob) {
+        await this.licenseManager.importLicense(data.updatedLicenseBlob);
+        logger.info('License renewed and updated via cloud heartbeat synchronization');
+      }
+    } catch {
+      // Offline / air-gapped workstations naturally ignore cloud sync failures
     }
   }
 

@@ -108,6 +108,7 @@ const MainAppContent: React.FC<MainAppContentProps> = ({
         { path: "/activate", element: (
           <LicenseActivation
             deviceFingerprint={licenseState.deviceFingerprint}
+            hasUsers={true}
             onImportSuccess={() => handlersRef.current.handleImportSuccess()}
             onDeveloperAccess={() => {
               handlersRef.current.setDeveloperBypass(true);
@@ -133,6 +134,7 @@ const AppRouter: React.FC = () => {
   const { t } = useTranslation();
   const { licenseState, setDeveloperBypass } = useLicense();
   const [showActivation, setShowActivation] = useState(false);
+  const [hasUsers, setHasUsers] = useState<boolean | null>(null);
 
   const [authView, setAuthView] = useState<AuthViewState>('checking');
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
@@ -147,8 +149,11 @@ const AppRouter: React.FC = () => {
     setShowActivation(true);
   }, []);
 
-  const handleImportSuccess = useCallback(() => {
-    setShowActivation(false);
+  const handleLoginSuccess = useCallback((user: AuthUser) => {
+    setCurrentUser(user);
+    setLockedUsername('');
+    setAuthView('authenticated');
+    setHasShownSessionWarning(false); // Reset session flag on fresh login
   }, []);
 
   const bootstrapSession = useCallback(async () => {
@@ -158,38 +163,42 @@ const AppRouter: React.FC = () => {
         username: 'developer',
         license_id: 'dev-license',
       });
+      setHasUsers(true);
       setAuthView('authenticated');
       return;
     }
 
     try {
-      const status = await window.electronAPI.auth.checkSession();
-      if (status.authenticated && status.user) {
-        setCurrentUser(status.user);
-        setAuthView('authenticated');
+      // 1. Check whether database has any registered users
+      const usersRes = await window.electronAPI.auth.hasUsers();
+      const usersExist = Boolean(usersRes?.hasUsers);
+      setHasUsers(usersExist);
+
+      if (usersExist) {
+        // 2. Check for active session
+        const status = await window.electronAPI.auth.checkSession();
+        if (status.authenticated && status.user) {
+          setCurrentUser(status.user);
+          setAuthView('authenticated');
+        } else {
+          setCurrentUser(null);
+          setAuthView('login');
+        }
       } else {
+        // No users in database -> setup wizard required
         setCurrentUser(null);
         setAuthView('login');
       }
     } catch {
+      setHasUsers(false);
       setCurrentUser(null);
       setAuthView('login');
     }
   }, []);
 
   useEffect(() => {
-    if (showActivation) {
-      return;
-    }
     void bootstrapSession();
-  }, [bootstrapSession, showActivation]);
-
-  const handleLoginSuccess = useCallback((user: AuthUser) => {
-    setCurrentUser(user);
-    setLockedUsername('');
-    setAuthView('authenticated');
-    setHasShownSessionWarning(false); // Reset session flag on fresh login
-  }, []);
+  }, [bootstrapSession]);
 
   const handleLockedOut = useCallback((username: string) => {
     setLockedUsername(username);
@@ -236,11 +245,62 @@ const AppRouter: React.FC = () => {
     }
   }, [authView, licenseState.isLoading, licenseState.maintenanceDaysLeft, licenseState.renewalDays, hasShownSessionWarning]);
 
-  if (showActivation) {
+  // Loading state while checking license and database users
+  if (licenseState.isLoading || hasUsers === null) {
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#f5f7fb',
+        }}
+      >
+        <div style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              width: '40px',
+              height: '40px',
+              border: '4px solid #e2e8f0',
+              borderTopColor: '#00E600',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              margin: '0 auto 16px',
+            }}
+          />
+          <p style={{ fontSize: '14px', color: '#64748b', margin: 0, fontWeight: 500 }}>
+            {t('app.checkingSession', 'Starting ScaleERP...')}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Setup Wizard Gating: Show setup if workstation is unlicensed OR has no admin accounts yet
+  const isUnlicensed = licenseState.state === 'no-license';
+  const isSetupRequired = isUnlicensed || hasUsers === false;
+
+  if (showActivation || isSetupRequired) {
     return (
       <LicenseActivation
         deviceFingerprint={licenseState.deviceFingerprint}
-        onImportSuccess={handleImportSuccess}
+        initialStep={!isUnlicensed && hasUsers === false ? 'admin_setup' : 'license'}
+        hasUsers={hasUsers}
+        onAdminSetupSuccess={(user) => {
+          setHasUsers(true);
+          setShowActivation(false);
+          if (user) {
+            handleLoginSuccess(user);
+          } else {
+            setAuthView('login');
+          }
+        }}
+        onImportSuccess={() => {
+          setHasUsers(true);
+          setShowActivation(false);
+          setAuthView('login');
+        }}
         onDeveloperAccess={() => {
           setDeveloperBypass(true);
           setShowActivation(false);

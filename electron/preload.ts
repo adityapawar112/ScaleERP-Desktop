@@ -164,6 +164,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
     getStatus: (): Promise<any> => ipcRenderer.invoke('license:getStatus'),
     validate: (): Promise<any> => ipcRenderer.invoke('license:validate'),
     importLicense: (blob: string): Promise<any> => ipcRenderer.invoke('license:import', blob),
+    activateOnline: (payload: { activationKey: string; customerName?: string; customerPhone?: string }): Promise<any> =>
+      ipcRenderer.invoke('license:activate-online', payload),
     getDeviceFingerprint: (): Promise<string> => ipcRenderer.invoke('license:getDeviceFingerprint'),
 
     // Scheduler invoke methods
@@ -239,6 +241,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
     }> => ipcRenderer.invoke('auth:verify-reset-code', resetCodeBlob),
     performReset: (resetCodeBlob: string, newPassword: string): Promise<{ success: boolean; message: string }> =>
       ipcRenderer.invoke('auth:perform-reset', resetCodeBlob, newPassword),
+    hasUsers: (): Promise<{ hasUsers: boolean; count: number; error?: string }> =>
+      ipcRenderer.invoke('auth:has-users'),
+    setupInitialAdmin: (payload: { username?: string; password: string; fullName?: string }): Promise<any> =>
+      ipcRenderer.invoke('auth:setup-initial-admin', payload),
   },
 
   devTools: {

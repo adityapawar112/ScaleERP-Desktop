@@ -140,14 +140,15 @@
 }
 
 
-/* Language Switcher Styling in Sidebar */
-.language-switcher {
+/* Language Switcher Styling strictly inside dark Sidebar */
+.sidebar .language-switcher {
   display: inline-block;
 }
 
-.language-switcher .btn,
-#language-dropdown,
-.language-switcher .dropdown-toggle {
+.sidebar .language-switcher .scaleerp-lang-toggle,
+.sidebar .language-switcher .btn,
+.sidebar .language-switcher #language-dropdown,
+.sidebar .language-switcher .dropdown-toggle {
   color: var(--brand-white) !important;
   border-color: rgba(255, 255, 255, 0.3) !important;
   background-color: rgba(255, 255, 255, 0.06) !important;
@@ -157,20 +158,22 @@
   transition: all 0.2s ease !important;
 }
 
-.language-switcher .btn:hover,
-.language-switcher .btn:focus,
-.language-switcher .btn:active,
-.language-switcher.show > .btn,
-.language-switcher .btn.show,
-#language-dropdown:hover,
-#language-dropdown:focus {
+.sidebar .language-switcher .scaleerp-lang-toggle:hover,
+.sidebar .language-switcher .scaleerp-lang-toggle:focus,
+.sidebar .language-switcher .btn:hover,
+.sidebar .language-switcher .btn:focus,
+.sidebar .language-switcher .btn:active,
+.sidebar .language-switcher.show > .btn,
+.sidebar .language-switcher .btn.show,
+.sidebar .language-switcher #language-dropdown:hover,
+.sidebar .language-switcher #language-dropdown:focus {
   color: var(--brand-white) !important;
   border-color: rgba(255, 255, 255, 0.8) !important;
   background-color: rgba(255, 255, 255, 0.15) !important;
   box-shadow: none !important;
 }
 
-.language-switcher .dropdown-menu {
+.sidebar .language-switcher .dropdown-menu {
   background-color: var(--brand-dark) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 8px !important;
@@ -179,7 +182,7 @@
   z-index: 1050;
 }
 
-.language-switcher .dropdown-item {
+.sidebar .language-switcher .dropdown-item {
   color: rgba(255, 255, 255, 0.85) !important;
   border-radius: 6px !important;
   padding: 6px 12px !important;
@@ -187,12 +190,12 @@
   transition: all 0.15s ease !important;
 }
 
-.language-switcher .dropdown-item:hover {
+.sidebar .language-switcher .dropdown-item:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
   color: var(--brand-white) !important;
 }
 
-.language-switcher .dropdown-item.active {
+.sidebar .language-switcher .dropdown-item.active {
   background-color: var(--primary-color) !important;
   color: var(--primary-contrast-text) !important;
   font-weight: 600 !important;

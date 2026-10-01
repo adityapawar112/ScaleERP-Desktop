@@ -185,6 +185,17 @@ export interface ElectronAPI {
     getStatus: () => Promise<LicenseStatus>;
     validate: () => Promise<LicenseStatus>;
     importLicense: (blob: string) => Promise<LicenseStatus>;
+    activateOnline: (payload: {
+      activationKey: string;
+      customerName?: string;
+      customerPhone?: string;
+    }) => Promise<{
+      success: boolean;
+      edition?: string;
+      validUntil?: string;
+      licenseStatus?: LicenseStatus;
+      message?: string;
+    }>;
     getDeviceFingerprint: () => Promise<string>;
     getSchedulerState: () => Promise<{ running: boolean }>;
     forceCheck: () => Promise<any>;
@@ -228,6 +239,20 @@ export interface ElectronAPI {
       expiresAt?: number;
     }>;
     performReset: (resetCodeBlob: string, newPassword: string) => Promise<{ success: boolean; message: string }>;
+    hasUsers: () => Promise<{ hasUsers: boolean; count: number; error?: string }>;
+    setupInitialAdmin: (payload: {
+      username?: string;
+      password: string;
+      fullName?: string;
+    }) => Promise<{
+      success: boolean;
+      user?: {
+        user_id: string;
+        username: string;
+        license_id: string;
+      };
+      message?: string;
+    }>;
   };
 
   devTools: {

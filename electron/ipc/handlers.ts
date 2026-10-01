@@ -767,6 +767,73 @@ export function createStatsHandlers(): Record<string, IPCHandler> {
       return licenseManager.validateLicense();
     },
 
+    'license:activate-online': async (
+      event: IpcMainInvokeEvent,
+      payload: { activationKey: string; customerName?: string; customerPhone?: string }
+    ) => {
+      if (!licenseManager) {
+        throw new Error('License manager not initialized');
+      }
+      const { activationKey, customerName, customerPhone } = payload || {};
+      if (!activationKey || typeof activationKey !== 'string') {
+        throw new Error('Activation key is required');
+      }
+
+      const { getDeviceFingerprint } = await import('../services/deviceFingerprint');
+      const os = await import('os');
+      const deviceFingerprint = getDeviceFingerprint();
+      const hostname = os.hostname();
+
+      const baseUrl = process.env.SCALEERP_API_URL || process.env.VITE_API_URL || 'http://localhost:3000';
+
+      try {
+        const res = await fetch(`${baseUrl}/api/v1/licensing/activate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            activationKey: activationKey.trim().toUpperCase(),
+            deviceFingerprint,
+            hostname,
+            customerName: customerName?.trim() || '',
+            customerPhone: customerPhone?.trim() || '',
+          }),
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success || !data.licenseBlob) {
+          return {
+            success: false,
+            message: data.message || 'Activation failed on licensing server.',
+          };
+        }
+
+        const importResult = await licenseManager.importLicense(data.licenseBlob);
+        if (!importResult.valid) {
+          return {
+            success: false,
+            message: importResult.reason || 'Cryptographic verification failed for received license.',
+          };
+        }
+
+        if (restartSchedulerCallback) {
+          await restartSchedulerCallback();
+        }
+
+        return {
+          success: true,
+          edition: data.edition || importResult.payload?.edition,
+          validUntil: data.validUntil || importResult.payload?.valid_until,
+          licenseStatus: importResult,
+        };
+      } catch (err: any) {
+        logger.error('license:activate-online network error:', err);
+        return {
+          success: false,
+          message: err.message || 'Failed to reach licensing authority server. Ensure ScaleERP Web is accessible or check your internet connection.',
+        };
+      }
+    },
+
     'license:import': async (event: IpcMainInvokeEvent, blob: string) => {
       if (!licenseManager) {
         throw new Error('License manager not initialized');
@@ -1249,6 +1316,81 @@ export function createStatsHandlers(): Record<string, IPCHandler> {
       } catch (error) {
         console.error('dev:generate-reset-code error:', error);
         return { success: false, error: error instanceof Error ? error.message : 'unknown' };
+      }
+    },
+
+    'auth:has-users': async () => {
+      try {
+        const { getAllUsers } = await import('../database/userOperations');
+        const users = await getAllUsers();
+        return { hasUsers: users && users.length > 0, count: users ? users.length : 0 };
+      } catch (err: any) {
+        logger.error('auth:has-users error:', err);
+        return { hasUsers: false, count: 0, error: err.message };
+      }
+    },
+
+    'auth:setup-initial-admin': async (
+      event: IpcMainInvokeEvent,
+      payload: { username?: string; password: string; fullName?: string }
+    ) => {
+      try {
+        const { getAllUsers, createUser } = await import('../database/userOperations');
+        const existingUsers = await getAllUsers();
+        if (existingUsers && existingUsers.length > 0) {
+          return {
+            success: false,
+            message: 'Initial administrator setup is only permitted when no database users exist.',
+          };
+        }
+
+        const username = (payload?.username || 'admin').trim().toLowerCase();
+        const password = payload?.password;
+        if (!password || password.length < 4) {
+          return {
+            success: false,
+            message: 'Administrator password must be at least 4 characters.',
+          };
+        }
+
+        let licenseId = 'default-license';
+        if (licenseManager) {
+          const status = licenseManager.getStatus();
+          if (status?.payload?.license_id) {
+            licenseId = status.payload.license_id;
+          }
+        }
+
+        const { hashPassword } = await import('../services/passwordHasher');
+        const crypto = await import('crypto');
+        const passwordHash = await hashPassword(password);
+        const userId = crypto.randomUUID();
+
+        await createUser({
+          user_id: userId,
+          username,
+          password_hash: passwordHash,
+          license_id: licenseId,
+          max_failed_attempts: 5,
+        });
+
+        if (!authService) {
+          throw new Error('Auth service not initialized');
+        }
+
+        const loginResult = await authService.login(username, password);
+
+        return {
+          success: true,
+          user: loginResult.user,
+          message: 'Administrator account configured successfully.',
+        };
+      } catch (err: any) {
+        logger.error('auth:setup-initial-admin error:', err);
+        return {
+          success: false,
+          message: err.message || 'Failed to configure initial administrator account.',
+        };
       }
     },
 

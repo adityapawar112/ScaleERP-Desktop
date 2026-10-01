@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLicense } from '../context/LicenseContext';
+import LanguageSwitcher from './LanguageSwitcher';
 import type { LicenseGuardProps } from '../types/license';
 
 /**
@@ -18,6 +19,13 @@ const LicenseGuard: React.FC<LicenseGuardProps> = ({
   const { t } = useTranslation();
   const { licenseState, isElectronAvailable } = useLicense();
   const { state, isLoading, isDeveloperBypass } = licenseState;
+
+  // Seamlessly transition to LicenseActivation on fresh startup with no license
+  useEffect(() => {
+    if (state === 'no-license' && onActivateLicense) {
+      onActivateLicense();
+    }
+  }, [state, onActivateLicense]);
 
   // Developer Bypass - allow all access
   if (isDeveloperBypass) {
@@ -72,77 +80,101 @@ const LicenseGuard: React.FC<LicenseGuardProps> = ({
   if (state === 'expired' || state === 'invalid') {
     return (
       <div
+        className="position-relative d-flex align-items-center justify-content-center"
         style={{
           position: 'fixed',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          backgroundColor: '#f5f7fb',
           zIndex: 9999,
+          fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
         }}
       >
+        <div className="position-absolute top-0 end-0 p-3">
+          <LanguageSwitcher />
+        </div>
         <div
           style={{
             backgroundColor: '#ffffff',
-            borderRadius: '12px',
+            borderRadius: '16px',
             padding: '40px',
-            maxWidth: '440px',
+            maxWidth: '460px',
             width: '90%',
             textAlign: 'center',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)',
+            border: '1px solid #e2e8f0',
           }}
         >
+          <div className="d-flex align-items-center justify-content-center gap-2 mb-3">
+            <img
+              src="./brand/logomark-icon-green.png"
+              alt="ScaleERP"
+              style={{ width: 36, height: 36, objectFit: 'contain' }}
+            />
+            <span
+              style={{
+                fontFamily: "'Stack Sans Notch', 'Outfit', sans-serif",
+                fontWeight: 800,
+                fontSize: '24px',
+                color: '#171717',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              ScaleERP
+            </span>
+          </div>
           <div
             style={{
-              width: '64px',
-              height: '64px',
+              width: '56px',
+              height: '56px',
               borderRadius: '50%',
-              backgroundColor: '#fef2f2',
+              backgroundColor: '#fee2e2',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              margin: '0 auto 20px',
+              margin: '0 auto 16px',
             }}
           >
-            <span style={{ fontSize: '28px' }}>🔒</span>
+            <span style={{ fontSize: '24px' }}>🔒</span>
           </div>
-          <h2
+          <h3
             style={{
               margin: '0 0 8px',
-              fontSize: '22px',
-              fontWeight: 600,
-              color: '#1a1a1a',
+              fontSize: '20px',
+              fontWeight: 700,
+              color: '#171717',
+              fontFamily: "'Outfit', sans-serif",
             }}
           >
             {t('licensing.license', 'License')} {state === 'expired' ? t('licenseBanner.expired', 'Expired') : t('licenseBanner.invalid', 'Invalid')}
-          </h2>
+          </h3>
           <p
             style={{
               margin: '0 0 24px',
               fontSize: '14px',
-              color: '#666',
+              color: '#64748b',
               lineHeight: 1.5,
             }}
           >
             {state === 'expired'
-              ? t('licensing.expiredDesc', 'Your ScaleERP license has expired. Please import a valid license to continue.')
-              : t('licensing.invalidDesc', 'Invalid license detected. Please contact support or import a valid license.')}
+              ? t('licensing.expiredDesc', 'Your ScaleERP license has expired. Please import or enter a valid license key to continue.')
+              : t('licensing.invalidDesc', 'Invalid license detected. Please enter a valid license key or contact developer support.')}
           </p>
           <button
             onClick={() => onActivateLicense?.()}
             style={{
               padding: '12px 32px',
-              fontSize: '15px',
-              fontWeight: 600,
-              backgroundColor: '#2563eb',
-              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 700,
+              backgroundColor: '#00E600',
+              color: '#171717',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '10px',
               cursor: 'pointer',
+              width: '100%',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.06)',
             }}
           >
             {t('licensing.activate', 'Activate License')}
@@ -152,77 +184,86 @@ const LicenseGuard: React.FC<LicenseGuardProps> = ({
     );
   }
 
-  // No license — render activation screen
+  // No license — fallback if router hasn't updated yet
   if (state === 'no-license') {
     return (
       <div
+        className="position-relative d-flex align-items-center justify-content-center"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           minHeight: '100vh',
-          backgroundColor: '#f5f7fa',
+          backgroundColor: '#f5f7fb',
+          fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
         }}
       >
+        <div className="position-absolute top-0 end-0 p-3">
+          <LanguageSwitcher />
+        </div>
         <div
           style={{
             backgroundColor: '#ffffff',
-            borderRadius: '12px',
+            borderRadius: '16px',
             padding: '40px',
             maxWidth: '440px',
             width: '90%',
             textAlign: 'center',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)',
+            border: '1px solid #e2e8f0',
           }}
         >
-          <div
-            style={{
-              width: '64px',
-              height: '64px',
-              borderRadius: '50%',
-              backgroundColor: '#eff6ff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 20px',
-            }}
-          >
-            <span style={{ fontSize: '28px' }}>🔑</span>
+          <div className="d-flex align-items-center justify-content-center gap-2 mb-3">
+            <img
+              src="./brand/logomark-icon-green.png"
+              alt="ScaleERP"
+              style={{ width: 36, height: 36, objectFit: 'contain' }}
+            />
+            <span
+              style={{
+                fontFamily: "'Stack Sans Notch', 'Outfit', sans-serif",
+                fontWeight: 800,
+                fontSize: '24px',
+                color: '#171717',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              ScaleERP
+            </span>
           </div>
-          <h2
+          <h3
             style={{
               margin: '0 0 8px',
-              fontSize: '22px',
-              fontWeight: 600,
-              color: '#1a1a1a',
+              fontSize: '20px',
+              fontWeight: 700,
+              color: '#171717',
+              fontFamily: "'Outfit', sans-serif",
             }}
           >
-            {t('licensing.noLicenseTitle', 'No License Found')}
-          </h2>
+            {t('setup.licenseTitle', 'Activate ScaleERP')}
+          </h3>
           <p
             style={{
               margin: '0 0 24px',
               fontSize: '14px',
-              color: '#666',
+              color: '#64748b',
               lineHeight: 1.5,
             }}
           >
-            {t('licensing.noLicenseDesc', 'Activate ScaleERP by importing your license file or pasting your license key.')}
+            {t('setup.licenseSubtitle', 'Enter your store details and license key to begin.')}
           </p>
           <button
             onClick={() => onActivateLicense?.()}
             style={{
               padding: '12px 32px',
-              fontSize: '15px',
-              fontWeight: 600,
-              backgroundColor: '#2563eb',
-              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 700,
+              backgroundColor: '#00E600',
+              color: '#171717',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '10px',
               cursor: 'pointer',
+              width: '100%',
             }}
           >
-            {t('licensing.importLicense', 'Import License')}
+            {t('setup.activateBtn', 'Activate License')}
           </button>
         </div>
       </div>
