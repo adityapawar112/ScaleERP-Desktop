@@ -1,0 +1,59 @@
+name: Release & Packaging Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & Package Windows Distribution
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies (clean)
+        run: npm ci
+
+      - name: Run unit & IPC integration tests
+        run: npm run test
+
+      - name: Build and verify safety
+        run: npm run build-all
+
+      - name: Package Windows installer & portable binaries
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx electron-builder --win --publish always
+
+      - name: Generate SHA-256 Checksums
+        shell: powershell
+        run: |
+          Get-FileHash -Algorithm SHA256 dist\ScaleERP-Setup-*.exe, dist\ScaleERP-Portable-*.zip | Format-Table -AutoSize | Out-File -FilePath dist\checksums.txt -Encoding utf8
+          Get-Content dist\checksums.txt
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          files: |
+            dist/ScaleERP-Setup-*.exe
+            dist/ScaleERP-Portable-*.zip
+            dist/ScaleERP-Portable-*.exe
+            dist/latest.yml
+            dist/checksums.txt
+          generate_release_notes: true
+          draft: false
+          prerelease: false

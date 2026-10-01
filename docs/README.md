@@ -41,5 +41,7 @@ Welcome to the internal engineering documentation for the **ScaleERP Desktop** a
 - [Internationalization (i18n)](file:///c:/Users/adity/Desktop/Projects/ScaleERP/ScaleERP-Desktop/docs/frontend/i18n.md) — Localization architecture supporting English and Marathi.
 - [Excel Export Engine](file:///c:/Users/adity/Desktop/Projects/ScaleERP/ScaleERP-Desktop/docs/frontend/excel-export.md) — Custom spreadsheet generator using ExcelJS.
 
-### 7. Release History
+### 7. Packaging & Releases
+- [Packaging & Code Signing Guide](file:///c:/Users/adity/Desktop/Projects/ScaleERP/ScaleERP-Desktop/docs/PACKAGING.md) — NSIS installer, portable zip distribution, Windows Authenticode code signing, and CI/CD release workflow.
 - [CHANGELOG.md](file:///c:/Users/adity/Desktop/Projects/ScaleERP/ScaleERP-Desktop/docs/CHANGELOG.md) — Chronological version log detailing all major releases, features, and security patches.
+

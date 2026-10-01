@@ -311,7 +311,7 @@ npm run build-all
 # Generate Windows NSIS installer and standalone portable zip
 npm run dist
 ```
-Distributable binaries are placed in `dist/` (`ScaleERP-Setup-1.0.0.exe` and `ScaleERP-Portable-1.0.0.zip`).
+Distributable binaries are placed in `dist/` (`ScaleERP-Setup-1.0.0.exe` and `ScaleERP-Portable-1.0.0.zip`). For comprehensive code signing, CI/CD, and air-gapped deployment guides, see [docs/PACKAGING.md](docs/PACKAGING.md).
 
 ---
 
@@ -327,6 +327,7 @@ Detailed engineering specifications, database schemas, and protocol definitions 
 | **IPC** | Main-Renderer interfaces | [IPC Channel Registry](docs/ipc/ipc-communication.md) • [Window API Reference](docs/ipc/api-reference.md) |
 | **Services** | Core background daemons | [Auth & Challenge Reset](docs/services/auth-and-reset.md) • [Backup Scheduler](docs/services/backup-scheduler.md) • [Google Drive Sync](docs/services/google-drive-sync.md) |
 | **Frontend** | React 19 UI & components | [Frontend Overview](docs/frontend/overview.md) • [Component Library](docs/frontend/components.md) • [Internationalization](docs/frontend/i18n.md) • [Excel Export](docs/frontend/excel-export.md) |
+| **Packaging** | Build pipeline & signing | [Packaging & Code Signing](docs/PACKAGING.md) |
 | **Changelog** | Version release history | [CHANGELOG.md](docs/CHANGELOG.md) |
 
 ---

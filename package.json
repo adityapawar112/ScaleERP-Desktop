@@ -1,7 +1,8 @@
 {
   "name": "scaleerp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ScaleERP Inventory Management Desktop Application",
+  "author": "Aditya Pawar <aditya@scaleerp.com>",
   "main": "build-electron/main.js",
   "homepage": "./",
   "private": true,
@@ -115,18 +116,24 @@
       "icon": "public/icon.ico",
       "target": [
         "nsis",
-        "portable"
+        "portable",
+        "zip"
       ],
+      "artifactName": "${productName}-Portable-${version}.${ext}",
       "forceCodeSigning": false,
       "verifyUpdateCodeSignature": false
     },
     "nsis": {
+      "artifactName": "${productName}-Setup-${version}.${ext}",
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "ScaleERP"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}"
     },
     "mac": {
       "icon": "public/brand/app-icon-squircle-green.png",
