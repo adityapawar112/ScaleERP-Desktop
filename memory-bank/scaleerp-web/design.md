@@ -7,7 +7,7 @@ The website `scaleerp-web` is the commercial and operational front-door for the 
 
 ```
 +-----------------------------------------------------------------------+
-|                 OUROFEEDS BRAND PHILOSOPHY                            |
+|                 SCALEERP BRAND PHILOSOPHY                            |
 |             "Rooted in Soil, Empowered by Precision."                 |
 |                                                                       |
 |  [ Tangible Commodities ] + [ Offline Fortress ] = [ Ledger Mastery ] |
@@ -64,7 +64,7 @@ ScaleERP is proudly engineered by **ScaleERP**, a full-cycle digital solutions p
 
 ```
             +-------------------------------------------------+
-            |        THE OUROSCALE PERPETUAL ENGINE           |
+            |        THE SCALEERP PERPETUAL ENGINE            |
             |     +--> [ BUILD ] -------> [ MEASURE ] --+     |
             |     +--- [ EVOLVE ] <-------- [ LEARN ] <-+     |
             +-------------------------------------------------+
@@ -85,7 +85,7 @@ The visual and philosophical design of ScaleERP is built upon the symbol of the 
 
 ### ScaleERP Authoritative Typography Accent
 For premium enterprise badges, cloud security disclosures, and developer login screens, the web platform introduces ScaleERP's commanding typography hierarchy:
-- **Headline Font (`Bebas Neue`)**: Massive, unapologetic, and fiercely vertical. It acts as the uncompromising steel framework of a skyscraper, rendering towering headlines (`"ENGINEERED BY OUROSCALE"`, `"SCALE IS NON-NEGOTIABLE"`) that demand authority without breaking onto multiple lines.
+- **Headline Font (`Bebas Neue`)**: Massive, unapologetic, and fiercely vertical. It acts as the uncompromising steel framework of a skyscraper, rendering towering headlines (`"ENGINEERED BY SCALEERP"`, `"SCALE IS NON-NEGOTIABLE"`) that demand authority without breaking onto multiple lines.
 - **Body Font (`Public Sans`)**: Sturdy, no-nonsense government-grade neutrality. Designed for extreme legibility, acting as the rock-solid foundation supporting commanding Bebas Neue banners.
 
 ### ScaleERP Electric Navy Accent (`#004B72`)

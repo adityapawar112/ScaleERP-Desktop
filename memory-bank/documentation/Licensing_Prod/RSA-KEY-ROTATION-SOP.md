@@ -66,4 +66,4 @@ If the rotation fails and you need to revert:
 3. Rebuild and redeploy.
 
 ---
-© 2026 Ouroscale Security & Engineering
+© 2026 ScaleERP Security & Engineering

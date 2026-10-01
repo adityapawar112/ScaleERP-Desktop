@@ -1,6 +1,6 @@
 # ScaleERP Vendor Operations Guide (Internal)
 
-This guide is for the Ouroscale development and support team to manage the licensing lifecycle and handle customer support for the ScaleERP desktop application.
+This guide is for the ScaleERP development and support team to manage the licensing lifecycle and handle customer support for the ScaleERP desktop application.
 
 ## 1. Security Architecture Overview
 - **Trust Anchor**: The Application contains a hardcoded Public RSA Key.
@@ -26,7 +26,7 @@ When a customer reports an issue and you connect via AnyDesk:
 1.  Navigate to the **Licensing** tab in the sidebar.
 2.  Navigate to the **Developer Dashboard** (or use the hidden shortcut: `/dev-dashboard`).
 3.  **Authenticate**: Enter the `DEVELOPER_SECRET` (Found in your Support Password Manager).
-    - *Default (Development)*: `ouro-dev-2026`
+    - *Default (Development)*: `scaleerp-dev-2026`
     - *Production*: [Check Internal Vault]
 
 ### Common Support Tasks:
@@ -59,4 +59,4 @@ Before shipping the application, follow these steps to ensure secure operations:
     - Ensure the `vendor/` directory (containing private keys) is **ABSENT**. (The automated `scripts/verify-build-safety.cjs` should confirm this).
 
 ---
-© 2026 Ouroscale Support Engineering
+© 2026 ScaleERP Support Engineering

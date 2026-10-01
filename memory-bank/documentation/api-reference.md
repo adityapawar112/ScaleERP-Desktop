@@ -172,7 +172,7 @@ Triggers if the login flow is cancelled or fails. Returns an error message.
 
 ## Developer Admin API (Internal)
 
-Requires the **Developer Secret** (`ouro-dev-2026`) as the final argument. Access via `window.electronAPI.devTools.*`.
+Requires the **Developer Secret** (`scaleerp-dev-2026`) as the final argument. Access via `window.electronAPI.devTools.*`.
 
 #### `generateLicense(params, secret)`
 Generate a signed license blob (requires vendor signing keys).

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLicense } from '../context/LicenseContext';
 import { useTranslation } from 'react-i18next';
 
-const DEV_SECRET = 'ouro-dev-2026';
+const DEV_SECRET = 'scaleerp-dev-2026';
 
 const LicenseAdmin: React.FC = () => {
   const { t } = useTranslation();

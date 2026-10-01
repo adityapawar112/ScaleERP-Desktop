@@ -131,7 +131,7 @@ Difficulties:
 - Current implementation requirement includes LoginScreen “Developer Access” integration and generation modals, which remain pending by checklist scope.
 
 Successes:
-- Added `src/pages/DevDashboard.tsx` with developer-secret auth guard (`ouro-dev-2026`) and 5 tabs (License Tools, Database, Table Browser, Logs, System Info).
+- Added `src/pages/DevDashboard.tsx` with developer-secret auth guard (`scaleerp-dev-2026`) and 5 tabs (License Tools, Database, Table Browser, Logs, System Info).
 - Updated `src/App.tsx` with `/dev-dashboard` route and redirects from `/database-diagnostics`, `/table-viewer`, `/license-logs`, `/license-admin`.
 - Updated `src/components/Sidebar.tsx` to remove old diagnostics/viewer links and add a dedicated Developer Dashboard link.
 - Verified with `npm run build` and `npm run validate-license-phase5-auth-integration` (both passing).

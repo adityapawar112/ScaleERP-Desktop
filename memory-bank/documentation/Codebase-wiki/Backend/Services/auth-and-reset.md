@@ -17,7 +17,7 @@ The system uses a transparent persistence layer for active sessions:
 
 ## Offline Password Reset
 
-Since the application is offline-first, password recovery relies on a cryptographic challenge-response protocol between the User and Ouroscale Support.
+Since the application is offline-first, password recovery relies on a cryptographic challenge-response protocol between the User and ScaleERP Support.
 
 ### Reset Flow
 

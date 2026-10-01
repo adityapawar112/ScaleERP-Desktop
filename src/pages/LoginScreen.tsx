@@ -29,7 +29,7 @@ interface LoginScreenProps {
   onDeveloperAccess: () => void;
 }
 
-const DEV_SECRET = 'ouro-dev-2026';
+const DEV_SECRET = 'scaleerp-dev-2026';
 
 const LoginScreen: React.FC<LoginScreenProps> = ({
   onLoginSuccess,

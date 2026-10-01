@@ -8,7 +8,7 @@
  * before the final build and kept secure.
  */
 
-export const DEVELOPER_SECRET = 'ouro-dev-2026';
+export const DEVELOPER_SECRET = 'scaleerp-dev-2026';
 
 /**
  * Validates a provided secret against the master developer secret.

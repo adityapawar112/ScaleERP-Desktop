@@ -87,7 +87,7 @@ const LicenseActivation: React.FC<ExtendedLicenseActivationProps> = ({
   const [developerSecret, setDeveloperSecret] = useState('');
   const [developerError, setDeveloperError] = useState<string | null>(null);
 
-  const DEV_SECRET = 'ouro-dev-2026';
+  const DEV_SECRET = 'scaleerp-dev-2026';
 
   // Check whether users already exist in SQLite on mount
   useEffect(() => {
@@ -407,7 +407,7 @@ const LicenseActivation: React.FC<ExtendedLicenseActivationProps> = ({
   // Developer Backdoor Authenticate
   const handleDeveloperAuthenticate = () => {
     setDeveloperError(null);
-    if (developerSecret.trim() !== DEV_SECRET && developerSecret.trim() !== 'scaleerp-dev-2026') {
+    if (developerSecret.trim() !== DEV_SECRET) {
       setDeveloperError('Invalid developer secret.');
       return;
     }
