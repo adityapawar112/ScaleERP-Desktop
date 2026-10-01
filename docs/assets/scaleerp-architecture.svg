@@ -1,0 +1,468 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 880" width="100%" height="100%">
+  <defs>
+    <!-- Fonts & Base Styles -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap');
+      
+      text {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      .mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .heading {
+        font-weight: 800;
+        fill: #0f172a;
+      }
+      .subheading {
+        font-weight: 500;
+        fill: #64748b;
+      }
+      .card-title {
+        font-weight: 700;
+        font-size: 13px;
+        fill: #ffffff;
+        letter-spacing: 0.3px;
+      }
+      .pill-text {
+        font-weight: 600;
+        font-size: 11px;
+        fill: #1e293b;
+      }
+      .pill-sub {
+        font-weight: 400;
+        font-size: 9.5px;
+        fill: #64748b;
+      }
+      .tag-text {
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.5px;
+      }
+      .conn-label {
+        font-weight: 600;
+        font-size: 10px;
+        fill: #475569;
+      }
+    </style>
+
+    <!-- Filters & Shadows -->
+    <filter id="cardShadow" x="-6%" y="-4%" width="112%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.06"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+
+    <filter id="containerShadow" x="-2%" y="-1%" width="104%" height="103%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.03"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="headerGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <linearGradient id="headerGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <linearGradient id="headerGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+
+    <linearGradient id="headerGrad4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <linearGradient id="cloudGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+
+    <linearGradient id="cloudGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <linearGradient id="cloudGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrowUp" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0 6, 4 1, 8 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0 2, 4 7, 8 2" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowUpPurple" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0 6, 4 1, 8 6" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrowDownPurple" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0 2, 4 7, 8 2" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="1060" height="880" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 32)">
+    <!-- ScaleERP Logo Pill -->
+    <rect x="0" y="0" width="136" height="28" rx="14" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <circle cx="16" cy="14" r="5" fill="#10b981"/>
+    <text x="28" y="18" font-size="11" font-weight="700" fill="#065f46" letter-spacing="0.5">SCALEERP ECOSYSTEM</text>
+
+    <!-- Main Title -->
+    <text x="0" y="56" class="heading" font-size="20">Full-Stack Architecture &amp; Process Topology</text>
+    <text x="0" y="74" class="subheading" font-size="12.5">Sub-millisecond Offline Desktop ERP (ScaleERP-Desktop) + Asymmetric Cloud Licensing Plane (ScaleERP-Web)</text>
+    
+    <!-- Badges Right -->
+    <g transform="translate(680, 8)">
+      <rect x="0" y="0" width="94" height="24" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+      <text x="10" y="16" font-size="10" font-weight="600" fill="#475569">ELECTRON 41</text>
+      
+      <rect x="102" y="0" width="86" height="24" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+      <text x="112" y="16" font-size="10" font-weight="600" fill="#475569">SQLITE WAL</text>
+      
+      <rect x="196" y="0" width="104" height="24" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+      <text x="206" y="16" font-size="10" font-weight="600" fill="#475569">NEXT.js 15 APP</text>
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- ZONE 1: CLIENT WORKSTATION (ScaleERP-Desktop)                   -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 125)">
+    <!-- Container Box -->
+    <rect width="980" height="420" rx="12" fill="#fafafa" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6 4" filter="url(#containerShadow)"/>
+    
+    <!-- Zone Tag -->
+    <g transform="translate(24, -14)">
+      <rect width="430" height="28" rx="6" fill="#2563eb"/>
+      <text x="16" y="18" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.5">ZONE 1: CLIENT POS &amp; GODOWN WORKSTATION (ScaleERP-Desktop)</text>
+    </g>
+
+    <text x="470" y="14" font-size="11" font-weight="600" fill="#64748b">100% AIR-GAPPED OFFLINE OPERATION • ZERO NETWORK REQUIRED</text>
+
+    <!-- COLUMN 1: Counter Billing Engine -->
+    <g transform="translate(24, 30)" filter="url(#cardShadow)">
+      <!-- Main Card Body -->
+      <rect width="218" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <!-- Header -->
+      <rect width="218" height="44" rx="10" fill="url(#headerGrad1)"/>
+      <rect y="32" width="218" height="12" fill="url(#headerGrad1)"/>
+      <text x="14" y="27" class="card-title">Counter Sales &amp; Billing</text>
+      
+      <!-- Mini Mockup Box: Invoice -->
+      <g transform="translate(12, 54)">
+        <rect width="194" height="74" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+        <circle cx="16" cy="16" r="4" fill="#3b82f6"/>
+        <text x="26" y="20" font-size="10" font-weight="700" fill="#1e293b">INVOICE #2026-0842</text>
+        <line x1="12" y1="28" x2="182" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+        <text x="12" y="42" font-size="9" font-weight="500" fill="#64748b">Poultry Layer Feed (50kg)</text>
+        <text x="142" y="42" font-size="9" font-weight="700" fill="#0f172a">₹14,500</text>
+        <text x="12" y="56" font-size="9" font-weight="500" fill="#64748b">Broiler Pre-Starter</text>
+        <text x="142" y="56" font-size="9" font-weight="700" fill="#0f172a">₹10,000</text>
+        <rect x="12" y="62" width="170" height="4" rx="2" fill="#e2e8f0"/>
+      </g>
+
+      <!-- Pill 1 -->
+      <g transform="translate(12, 138)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Sub-millisecond POS</text>
+        <text x="12" y="34" class="pill-sub">Hotkeys, barcode entry, instant totals</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(12, 194)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Payment Splits</text>
+        <text x="12" y="34" class="pill-sub">Cash, UPI, &amp; credit ledger balances</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(12, 250)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Bilingual Localization</text>
+        <text x="12" y="34" class="pill-sub">Full English &amp; Marathi script support</text>
+      </g>
+
+      <!-- Pill 4 -->
+      <g transform="translate(12, 306)">
+        <rect width="194" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="12" y="20" class="pill-text" fill="#0f172a">React 19 Frontend</text>
+        <text x="12" y="34" class="pill-sub">Vite, Context API &amp; Bootstrap 5</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 2: Storage & SQLite WAL Engine -->
+    <g transform="translate(262, 30)" filter="url(#cardShadow)">
+      <rect width="218" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect width="218" height="44" rx="10" fill="url(#headerGrad2)"/>
+      <rect y="32" width="218" height="12" fill="url(#headerGrad2)"/>
+      <text x="14" y="27" class="card-title">SQLite 3 (WAL) Data Layer</text>
+
+      <!-- Mini Mockup Box: Database -->
+      <g transform="translate(12, 54)">
+        <rect width="194" height="74" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+        <rect x="12" y="10" width="80" height="20" rx="4" fill="#0284c7"/>
+        <text x="18" y="24" font-size="9" font-weight="700" fill="#ffffff">WAL MODE</text>
+        <rect x="98" y="10" width="84" height="20" rx="4" fill="#10b981"/>
+        <text x="104" y="24" font-size="9" font-weight="700" fill="#ffffff">ACID LOCKED</text>
+        <text x="12" y="46" class="mono" font-size="9" fill="#334155">BEGIN TRANSACTION;</text>
+        <text x="12" y="58" class="mono" font-size="9" fill="#059669">UPDATE stock SET qty=qty-10</text>
+        <text x="12" y="68" class="mono" font-size="8.5" fill="#64748b">COMMIT; -- sub-ms fsync</text>
+      </g>
+
+      <!-- Pill 1 -->
+      <g transform="translate(12, 138)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Zero Storage Quota</text>
+        <text x="12" y="34" class="pill-sub">Direct OS disk I/O, no browser limits</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(12, 194)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">100k+ Row Performance</text>
+        <text x="12" y="34" class="pill-sub">Indexed ledger joins in &lt; 2ms</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(12, 250)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Safe Stock Rollbacks</text>
+        <text x="12" y="34" class="pill-sub">Transactional integrity on deletion</text>
+      </g>
+
+      <!-- Pill 4 -->
+      <g transform="translate(12, 306)">
+        <rect width="194" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="12" y="20" class="pill-text" fill="#0f172a">Native C++ Bindings</text>
+        <text x="12" y="34" class="pill-sub">Node-sqlite3 driver in Main process</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 3: Hardware & Thermal Invoicing -->
+    <g transform="translate(500, 30)" filter="url(#cardShadow)">
+      <rect width="218" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect width="218" height="44" rx="10" fill="url(#headerGrad3)"/>
+      <rect y="32" width="218" height="12" fill="url(#headerGrad3)"/>
+      <text x="14" y="27" class="card-title">Hardware &amp; Print Engine</text>
+
+      <!-- Mini Mockup Box: Printer -->
+      <g transform="translate(12, 54)">
+        <rect width="194" height="74" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+        <rect x="12" y="10" width="70" height="20" rx="4" fill="#0d9488"/>
+        <text x="18" y="24" font-size="9" font-weight="700" fill="#ffffff">80mm POS</text>
+        <text x="90" y="24" font-size="9" font-weight="600" fill="#0f766e">RAW ESC/POS</text>
+        <text x="12" y="44" font-size="9" font-weight="600" fill="#1e293b">Sub-second Native Print Cut</text>
+        <text x="12" y="56" font-size="8.5" fill="#64748b">No browser print preview popups</text>
+        <text x="12" y="68" font-size="8.5" font-weight="600" fill="#2563eb">Auto A4 / A5 Dual Stacking</text>
+      </g>
+
+      <!-- Pill 1 -->
+      <g transform="translate(12, 138)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Raw Thermal Output</text>
+        <text x="12" y="34" class="pill-sub">Direct USB/Serial ESC/POS cut</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(12, 194)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Digital PDF Fallback</text>
+        <text x="12" y="34" class="pill-sub">Automatic A4 corporate sheet render</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(12, 250)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">WhatsApp Direct Share</text>
+        <text x="12" y="34" class="pill-sub">Instant customer payment reminder</text>
+      </g>
+
+      <!-- Pill 4 -->
+      <g transform="translate(12, 306)">
+        <rect width="194" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="12" y="20" class="pill-text" fill="#0f172a">ExcelJS Analytics</text>
+        <text x="12" y="34" class="pill-sub">Multi-tab ledger balance sheets</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 4: Cryptographic Tamper Shield -->
+    <g transform="translate(738, 30)" filter="url(#cardShadow)">
+      <rect width="218" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect width="218" height="44" rx="10" fill="url(#headerGrad4)"/>
+      <rect y="32" width="218" height="12" fill="url(#headerGrad4)"/>
+      <text x="14" y="27" class="card-title">Cryptographic Tamper Shield</text>
+
+      <!-- Mini Mockup Box: Security -->
+      <g transform="translate(12, 54)">
+        <rect width="194" height="74" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+        <circle cx="20" cy="18" r="6" fill="#d97706"/>
+        <text x="32" y="22" font-size="9.5" font-weight="700" fill="#92400e">MACHINE BOUND</text>
+        <text x="12" y="44" class="mono" font-size="8.5" fill="#475569">HWID: e3b0c44298fc1c14...</text>
+        <text x="12" y="56" font-size="9" font-weight="600" fill="#b45309">24h Clock-Rewind Guard</text>
+        <text x="12" y="68" font-size="8.5" fill="#64748b">Chronometric drift lockout</text>
+      </g>
+
+      <!-- Pill 1 -->
+      <g transform="translate(12, 138)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">SHA-256 Fingerprint</text>
+        <text x="12" y="34" class="pill-sub">CPU + MAC + OS motherboard hash</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(12, 194)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">RSA-PSS Verification</text>
+        <text x="12" y="34" class="pill-sub">Embedded public key .lic validation</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(12, 250)">
+        <rect width="194" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="12" y="20" class="pill-text">Challenge-Response</text>
+        <text x="12" y="34" class="pill-sub">Cryptographic offline password reset</text>
+      </g>
+
+      <!-- Pill 4 -->
+      <g transform="translate(12, 306)">
+        <rect width="194" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+        <text x="12" y="20" class="pill-text" fill="#0f172a">Loopback OAuth2</text>
+        <text x="12" y="34" class="pill-sub">Google Drive PKCE cloud sync</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- MIDDLE CONNECTOR CHANNELS                                      -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 545)">
+    <!-- Line 1: Left / Activation -->
+    <path d="M 210, 0 L 210, 60" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowDown)"/>
+    <rect x="80" y="22" width="260" height="20" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="92" y="36" class="conn-label" fill="#1d4ed8">POST /api/v1/licensing/activate (Key + HWID)</text>
+
+    <!-- Line 2: Center / Preload Bridge -->
+    <path d="M 490, 0 L 490, 60" stroke="#0f172a" stroke-width="2"/>
+    <rect x="360" y="22" width="260" height="20" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="372" y="36" class="conn-label" fill="#0f172a">Preload ContextBridge (Type-Safe IPC)</text>
+
+    <!-- Line 3: Right / Heartbeat Sync -->
+    <path d="M 770, 60 L 770, 0" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowUpPurple)"/>
+    <rect x="650" y="22" width="240" height="20" rx="10" fill="#f5f3ff" stroke="#ddd6fe"/>
+    <text x="662" y="36" class="conn-label" fill="#6d28d9">POST /sync-heartbeat (Clock Audit)</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- ZONE 2: CLOUD LICENSING & CONTROL PLANE (ScaleERP-Web)        -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 605)">
+    <!-- Container Box -->
+    <rect width="980" height="154" rx="12" fill="#fafafa" stroke="#4f46e5" stroke-width="2" stroke-dasharray="6 4" filter="url(#containerShadow)"/>
+
+    <!-- Zone Tag -->
+    <g transform="translate(24, -14)">
+      <rect width="470" height="28" rx="6" fill="#4f46e5"/>
+      <text x="16" y="18" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.5">ZONE 2: CLOUD LICENSING &amp; CONTROL PLANE (ScaleERP-Web)</text>
+    </g>
+
+    <text x="510" y="14" font-size="11" font-weight="600" fill="#64748b">scaleerp.vercel.app • CENTRAL ENTITLEMENTS &amp; TELEMETRY</text>
+
+    <!-- CARD 1: Next.js 15 Web Portal -->
+    <g transform="translate(24, 26)" filter="url(#cardShadow)">
+      <rect width="298" height="106" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect width="298" height="32" rx="8" fill="url(#cloudGrad1)"/>
+      <rect y="22" width="298" height="10" fill="url(#cloudGrad1)"/>
+      <text x="14" y="21" class="card-title">Next.js 15 Web Portal &amp; Docs</text>
+
+      <g transform="translate(12, 42)">
+        <text x="0" y="14" class="pill-text">App Router &amp; Server Components</text>
+        <text x="0" y="28" class="pill-sub">Markdown docs engine with dynamic slug routes</text>
+        <text x="0" y="44" class="pill-text">Dynamic SEO &amp; AI Directives</text>
+        <text x="0" y="58" class="pill-sub">robots.ts, sitemap.ts, and llms.txt standard</text>
+      </g>
+    </g>
+
+    <!-- CARD 2: RSA-2048 Signing Authority -->
+    <g transform="translate(342, 26)" filter="url(#cardShadow)">
+      <rect width="298" height="106" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect width="298" height="32" rx="8" fill="url(#cloudGrad2)"/>
+      <rect y="22" width="298" height="10" fill="url(#cloudGrad2)"/>
+      <text x="14" y="21" class="card-title">RSA-2048 Cryptographic Authority</text>
+
+      <g transform="translate(12, 42)">
+        <text x="0" y="14" class="pill-text">Asymmetric .lic Minter</text>
+        <text x="0" y="28" class="pill-sub">Signs canonical payloads via Node.js crypto</text>
+        <text x="0" y="44" class="pill-text">Hardware Lock Validation</text>
+        <text x="0" y="58" class="pill-sub">Enforces strict 1-device per license quotas</text>
+      </g>
+    </g>
+
+    <!-- CARD 3: Supabase PostgreSQL -->
+    <g transform="translate(660, 26)" filter="url(#cardShadow)">
+      <rect width="298" height="106" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect width="298" height="32" rx="8" fill="url(#cloudGrad3)"/>
+      <rect y="22" width="298" height="10" fill="url(#cloudGrad3)"/>
+      <text x="14" y="21" class="card-title">Supabase PostgreSQL Database</text>
+
+      <g transform="translate(12, 42)">
+        <text x="0" y="14" class="pill-text">Entitlements &amp; Device Activations</text>
+        <text x="0" y="28" class="pill-sub">Tracks hardware fingerprints, hostnames &amp; IPs</text>
+        <text x="0" y="44" class="pill-text">Anti-Tamper Telemetry Logs</text>
+        <text x="0" y="58" class="pill-sub">Audit trail of chronometric and database anomalies</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- BOTTOM ECOSYSTEM TECH STACK STRIP                              -->
+  <!-- ============================================================== -->
+  <g transform="translate(40, 785)">
+    <!-- Container -->
+    <rect width="980" height="65" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+
+    <!-- Row 1: Left Label -->
+    <text x="24" y="26" font-size="11" font-weight="700" fill="#0f172a">ECOSYSTEM TECH STACK</text>
+    <text x="24" y="46" font-size="9.5" font-weight="500" fill="#64748b">Verified &amp; Benchmarked</text>
+
+    <!-- Tech Badges -->
+    <g transform="translate(190, 16)">
+      <!-- Electron -->
+      <rect x="0" y="0" width="96" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="12" y="20" font-size="11" font-weight="700" fill="#0f172a">⚡ Electron 41</text>
+
+      <!-- React 19 -->
+      <rect x="106" y="0" width="94" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="118" y="20" font-size="11" font-weight="700" fill="#0f172a">⚛ React 19.2</text>
+
+      <!-- SQLite 3 -->
+      <rect x="210" y="0" width="112" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="222" y="20" font-size="11" font-weight="700" fill="#0f172a">🗄 SQLite 3 WAL</text>
+
+      <!-- TypeScript -->
+      <rect x="332" y="0" width="108" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="344" y="20" font-size="11" font-weight="700" fill="#0f172a">📘 TypeScript 5.9</text>
+
+      <!-- Next.js 15 -->
+      <rect x="450" y="0" width="96" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="462" y="20" font-size="11" font-weight="700" fill="#0f172a">▲ Next.js 15</text>
+
+      <!-- Supabase -->
+      <rect x="556" y="0" width="100" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="568" y="20" font-size="11" font-weight="700" fill="#0f172a">🟢 Supabase</text>
+
+      <!-- ESC/POS -->
+      <rect x="666" y="0" width="104" height="32" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+      <text x="678" y="20" font-size="11" font-weight="700" fill="#0f172a">🖨 80mm ESC/POS</text>
+    </g>
+  </g>
+</svg>
