@@ -132,40 +132,11 @@ Most commercial ERPs (such as Zoho, SAP, and TallyPrime) force compromise betwee
 
 ## 🔒 Multi-Process Security Boundary
 
-Electron applications risk security vulnerabilities when the renderer process has direct filesystem or Node.js access. ScaleERP strictly enforces process isolation:
+Electron applications risk security vulnerabilities when the renderer process has direct filesystem or Node.js access. ScaleERP strictly enforces process isolation with a sandboxed Chromium renderer, ContextBridge whitelist validation, and isolated Node.js services:
 
-```
-[Chromium Renderer: React 19]
-             │
-             │  window.electronAPI.invoke(channel, payload)
-             ▼
-[Preload ContextBridge: contextIsolation=true, nodeIntegration=false]
-             │
-             │  Type-Safe IPC Channel Router
-             ▼
-[Electron Main Process: Node.js 20 Runtime]
-   ├── DatabaseManager (SQLite 3 WAL)
-   ├── SecurityService (RSA-2048 & HWID)
-   ├── GoogleDriveService (OAuth2 PKCE)
-   └── PrinterService (ESC/POS Driver)
-```
-
-```mermaid
-sequenceDiagram
-    autonumber
-    participant R as Chromium Renderer (React 19)
-    participant P as Preload Bridge (contextBridge)
-    participant M as Node.js Main Process
-    participant D as Database Engine (SQLite 3 WAL)
-
-    R->>P: window.electronAPI.invoke("db:transaction:create", payload)
-    P->>M: ipcRenderer.invoke("db:transaction:create", sanitizedArgs)
-    Note over M: Validate schema, session state & license grace rules
-    M->>D: BEGIN TRANSACTION; ... UPDATE stock; ... COMMIT;
-    D-->>M: Relational Rowset + LastInsertRowID
-    M-->>P: Standardized IPC Response Envelope
-    P-->>R: Type-Safe Resolved Promise
-```
+<div align="center">
+  <img src="docs/assets/scaleerp-ipc-boundary.svg" alt="ScaleERP Multi-Process Security Boundary &amp; IPC Architecture" width="100%" />
+</div>
 
 ---
 
