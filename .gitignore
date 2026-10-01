@@ -116,5 +116,7 @@ builder_error.log
 temp-e2e-data/
 test-run/
 scratch/
+memory-bank/
+
 
 
