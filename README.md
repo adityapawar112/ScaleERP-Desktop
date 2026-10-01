@@ -58,7 +58,7 @@ ScaleERP is a unified full-stack ecosystem engineered to solve the operational v
 Below is the verified structural topology of the ScaleERP ecosystem, contrasting local workstation components with the cloud control plane:
 
 <div align="center">
-  <img src="docs/assets/scaleerp-architecture.svg" alt="ScaleERP System Architecture Diagram" width="100%" />
+  <img src="docs/assets/scaleerp-architecture.png" alt="ScaleERP System Architecture Diagram" width="100%" />
 </div>
 
 ---
@@ -130,27 +130,74 @@ Most commercial ERPs (such as Zoho, SAP, and TallyPrime) force compromise betwee
 
 ---
 
-## 🖥️ Production Interface & Operational Workflow
+## 🖥️ Visual Feature Tour & Operational Workflows
 
-Following the operational standards of enterprise ERPs, ScaleERP unites inventory movements and customer credit ledgers into an integrated view:
+Following the visual documentation standards of enterprise platforms like **Ever Gauzy** and **Dolibarr**, below is a tour of the production desktop application:
 
-<div align="center">
-  <img src="docs/assets/platform_hero.png" alt="ScaleERP Counter Billing &amp; Stock Ledger Interface" width="92%" />
-</div>
+### 1. High-Velocity Counter Billing & Ledger Tracking
 
 <table>
   <tr>
-    <td width="33%" valign="top">
-      <h4>⚡ Rapid Counter POS Entry</h4>
-      <p>Instant item lookup with barcode scanning and keyboard shortcuts. Supports custom units (bags, quintals, kilograms) with real-time tax calculation.</p>
+    <td width="50%" align="center">
+      <b>⚡ Rapid Counter POS &amp; Transaction Entry</b><br />
+      <img src="docs/assets/AddTransaction.png" alt="Counter Billing POS Screen" width="100%" />
+      <p align="left"><i>Instant item additions, stock quantity alerts, and dual Cash/UPI payment settlement splits.</i></p>
     </td>
-    <td width="33%" valign="top">
-      <h4>📑 Live Party Ledger Recalculation</h4>
-      <p>Every transaction updates customer and broker balances in real time. Tracks cash, UPI, and outstanding credit without manual reconciliation.</p>
+    <td width="50%" align="center">
+      <b>📑 Party Transaction Ledgers &amp; History</b><br />
+      <img src="docs/assets/TransactionRecords.png" alt="Transaction Records &amp; Ledger Screen" width="100%" />
+      <p align="left"><i>Comprehensive chronological audit trail of all wholesale sales, purchases, and outstanding balances.</i></p>
     </td>
-    <td width="33%" valign="top">
-      <h4>🔄 Atomic Stock Rollback</h4>
-      <p>Deleting a transaction safely restores manufacturer-level inventory quantities and recalculates ledger totals with complete audit preservation.</p>
+  </tr>
+</table>
+
+### 2. Multi-Format Invoice Engine & ESC/POS Thermal Output
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>🖨️ Custom Invoice &amp; Template Designer</b><br />
+      <img src="docs/assets/CustomBills.png" alt="Invoice Template Customizer Screen" width="100%" />
+      <p align="left"><i>Switch between 80mm thermal receipt rolls, A4 standard sheets, and A5 compact invoices.</i></p>
+    </td>
+    <td width="50%" align="center">
+      <b>🧾 Direct Thermal Bill Output Sample</b><br />
+      <img src="docs/assets/InvoiceExample.png" alt="Direct Thermal Invoice Sample" width="100%" />
+      <p align="left"><i>Sub-second native ESC/POS thermal print cut with GST breakdowns and custom branding.</i></p>
+    </td>
+  </tr>
+</table>
+
+### 3. WhatsApp Direct Recovery & Google Drive Cloud Sync
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>💬 WhatsApp Payment Recovery Hub</b><br />
+      <img src="docs/assets/WhatappManager.png" alt="WhatsApp Manager Screen" width="100%" />
+      <p align="left"><i>Send instant digital PDF invoices and automated payment reminders via WhatsApp.</i></p>
+    </td>
+    <td width="50%" align="center">
+      <b>☁️ Loopback OAuth Google Drive Cloud Backup</b><br />
+      <img src="docs/assets/Backups.png" alt="Google Drive Backup Screen" width="100%" />
+      <p align="left"><i>Automated encrypted SQLite snapshots synchronized to private cloud storage without proxy servers.</i></p>
+    </td>
+  </tr>
+</table>
+
+### 4. Bilingual Localization & Executive Diagnostics
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>🌐 Complete Marathi Localization</b><br />
+      <img src="docs/assets/MarathiDashboard.png" alt="Marathi Localization Dashboard Screen" width="100%" />
+      <p align="left"><i>Native Marathi script rendering across all counters, inventory views, and billing reports.</i></p>
+    </td>
+    <td width="50%" align="center">
+      <b>📊 Comprehensive Financial &amp; Stock Reports</b><br />
+      <img src="docs/assets/Reports.png" alt="Reports &amp; Analytics Screen" width="100%" />
+      <p align="left"><i>Real-time profit margins, stock turnover metrics, and multi-tab Excel spreadsheet export.</i></p>
     </td>
   </tr>
 </table>
@@ -162,7 +209,11 @@ Following the operational standards of enterprise ERPs, ScaleERP unites inventor
 ScaleERP's licensing engine is engineered for commercial deployments where store computers operate offline in rural locations with zero internet connectivity:
 
 <div align="center">
-  <img src="docs/assets/scaleerp-licensing-lifecycle.svg" alt="ScaleERP Cryptographic Licensing Lifecycle &amp; Anti-Tamper Protocol" width="100%" />
+  <img src="docs/assets/scaleerp-licensing-lifecycle.png" alt="ScaleERP Cryptographic Licensing Lifecycle &amp; Anti-Tamper Protocol" width="100%" />
+</div>
+
+<div align="center">
+  <img src="docs/assets/LicenseMangement.png" alt="ScaleERP Machine License Management Interface" width="90%" />
 </div>
 
 | Security Layer | Cryptographic Mechanism | Threat Mitigated |
