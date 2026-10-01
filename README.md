@@ -130,13 +130,68 @@ Most commercial ERPs (such as Zoho, SAP, and TallyPrime) force compromise betwee
 
 ---
 
-## 🔒 Multi-Process Security Boundary
+## 🖥️ Production Interface & Operational Workflow
 
-Electron applications risk security vulnerabilities when the renderer process has direct filesystem or Node.js access. ScaleERP strictly enforces process isolation with a sandboxed Chromium renderer, ContextBridge whitelist validation, and isolated Node.js services:
+Following the operational standards of enterprise ERPs, ScaleERP unites inventory movements and customer credit ledgers into an integrated view:
 
 <div align="center">
-  <img src="docs/assets/scaleerp-ipc-boundary.svg" alt="ScaleERP Multi-Process Security Boundary &amp; IPC Architecture" width="100%" />
+  <img src="docs/assets/platform_hero.png" alt="ScaleERP Counter Billing &amp; Stock Ledger Interface" width="92%" />
 </div>
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>⚡ Rapid Counter POS Entry</h4>
+      <p>Instant item lookup with barcode scanning and keyboard shortcuts. Supports custom units (bags, quintals, kilograms) with real-time tax calculation.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h4>📑 Live Party Ledger Recalculation</h4>
+      <p>Every transaction updates customer and broker balances in real time. Tracks cash, UPI, and outstanding credit without manual reconciliation.</p>
+    </td>
+    <td width="33%" valign="top">
+      <h4>🔄 Atomic Stock Rollback</h4>
+      <p>Deleting a transaction safely restores manufacturer-level inventory quantities and recalculates ledger totals with complete audit preservation.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🛡️ Air-Gapped Cryptographic Licensing & Anti-Tamper Protocol
+
+ScaleERP's licensing engine is engineered for commercial deployments where store computers operate offline in rural locations with zero internet connectivity:
+
+<div align="center">
+  <img src="docs/assets/scaleerp-licensing-lifecycle.svg" alt="ScaleERP Cryptographic Licensing Lifecycle &amp; Anti-Tamper Protocol" width="100%" />
+</div>
+
+| Security Layer | Cryptographic Mechanism | Threat Mitigated |
+| :--- | :--- | :--- |
+| **Machine Fingerprint** | `SHA-256(CPU + MAC + OS Motherboard UUID)` | Prevents copying the database and license file to unactivated PCs. |
+| **Asymmetric Signatures** | `RSA-2048` with `RSA-PSS` padding & SHA-256 | Prevents license forging or modifying expiry dates in the `.lic` file. |
+| **Chronometric Drift Guard** | Hourly background timestamp audit | Detects clock rollback (> 24 hours) used to bypass license expiry dates. |
+| **Offline Password Reset** | Cryptographic challenge-response nonce | Allows secure administrative lockout recovery without cloud access. |
+
+---
+
+## ⚡ ACID Transaction & Stock Rollback Architecture
+
+Unlike web applications that rely on remote database locks, ScaleERP manages transactional consistency directly through SQLite 3 WAL:
+
+```
+[Customer Sale Transaction]
+         │
+         ├── 1. BEGIN EXCLUSIVE TRANSACTION;
+         ├── 2. Verify Available Stock (Fail if qty < requested)
+         ├── 3. INSERT INTO customer_transactions (...)
+         ├── 4. INSERT INTO customer_transaction_items (Line items with manufacturer tracking)
+         ├── 5. UPDATE product_manufacturers SET stock = stock - requested_qty
+         ├── 6. INSERT INTO customer_leisures (Payment record: Cash / UPI / ToBePaid)
+         ├── 7. UPDATE customers SET total_pending = total_pending + unpaid_balance
+         └── 8. COMMIT; (fsync to WAL file in < 2ms)
+```
+
+If an operator deletes an errant transaction, an inverse atomic rollback runs automatically: stock quantities are restored to each manufacturer, ledger balances are deducted, and an append-only audit record is written.
 
 ---
 

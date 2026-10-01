@@ -1,234 +1,150 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 560" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="100%" height="100%">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap');
-      
       text {
-        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
-      .mono {
-        font-family: 'JetBrains Mono', monospace;
-      }
-      .heading {
-        font-weight: 800;
-        fill: #0f172a;
-      }
-      .subheading {
-        font-weight: 500;
-        fill: #64748b;
-      }
-      .card-title {
-        font-weight: 700;
-        font-size: 12.5px;
-        fill: #ffffff;
-      }
-      .pill-text {
-        font-weight: 600;
-        font-size: 11px;
-        fill: #1e293b;
-      }
-      .pill-sub {
-        font-weight: 400;
-        font-size: 9.5px;
-        fill: #64748b;
-      }
-      .step-badge {
-        font-weight: 700;
-        font-size: 10px;
-        fill: #ffffff;
-      }
-      .phase-label {
-        font-weight: 800;
-        font-size: 11px;
-        letter-spacing: 0.6px;
-      }
+      .title { font-weight: 800; font-size: 20px; fill: #0f172a; }
+      .subtitle { font-weight: 500; font-size: 13px; fill: #475569; }
+      .step-num { font-weight: 800; font-size: 11px; fill: #ffffff; }
+      .card-title { font-weight: 700; font-size: 14px; fill: #0f172a; }
+      .card-sub { font-weight: 600; font-size: 11px; }
+      .card-desc { font-weight: 500; font-size: 12px; fill: #475569; line-height: 1.4; }
+      .mono { font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 11px; font-weight: 600; }
     </style>
 
-    <filter id="cardShadow" x="-6%" y="-4%" width="112%" height="112%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.06"/>
-      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#0f172a" flood-opacity="0.04"/>
+    <filter id="shadow" x="-4%" y="-3%" width="108%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
     </filter>
 
-    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#4f46e5"/>
-      <stop offset="100%" stop-color="#4338ca"/>
-    </linearGradient>
-
-    <linearGradient id="emeraldGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#059669"/>
-      <stop offset="100%" stop-color="#047857"/>
-    </linearGradient>
-
-    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#d97706"/>
-      <stop offset="100%" stop-color="#b45309"/>
-    </linearGradient>
-
-    <linearGradient id="skyGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0284c7"/>
-      <stop offset="100%" stop-color="#0369a1"/>
-    </linearGradient>
-
-    <marker id="arrowRight" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
       <polygon points="0 1, 7 4, 0 7" fill="#4f46e5"/>
     </marker>
   </defs>
 
-  <!-- Base Canvas -->
-  <rect width="1020" height="560" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <!-- Canvas -->
+  <rect width="1000" height="440" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
 
   <!-- Top Title Banner -->
   <g transform="translate(36, 28)">
-    <rect x="0" y="0" width="180" height="26" rx="13" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1"/>
-    <circle cx="14" cy="13" r="4.5" fill="#4f46e5"/>
-    <text x="26" y="17" font-size="10.5" font-weight="700" fill="#3730a3" letter-spacing="0.5">RSA-2048 CRYPTOGRAPHY</text>
+    <rect x="0" y="0" width="160" height="24" rx="12" fill="#eef2ff" stroke="#c7d2fe"/>
+    <circle cx="12" cy="12" r="4.5" fill="#4f46e5"/>
+    <text x="22" y="16" font-size="10.5" font-weight="700" fill="#3730a3" letter-spacing="0.4">SECURITY PROTOCOL</text>
 
-    <text x="0" y="52" class="heading" font-size="19">Licensing Lifecycle &amp; Anti-Tamper Security Architecture</text>
-    <text x="0" y="70" class="subheading" font-size="12">Asymmetric signature minting, machine hardware fingerprint binding, and chronometric drift verification</text>
+    <text x="0" y="48" class="title">Cryptographic Licensing &amp; Anti-Tamper Flow</text>
+    <text x="0" y="66" class="subtitle">Asymmetric RSA-2048 machine-bound signing, offline PSS verification, and chronometric drift detection</text>
   </g>
 
   <!-- ============================================================== -->
-  <!-- PHASE 1: HARDWARE-BOUND MACHINE ACTIVATION                     -->
+  <!-- 4 HORIZONTAL PROTOCOL STAGES                                   -->
   <!-- ============================================================== -->
-  <g transform="translate(36, 110)">
-    <!-- Phase Container -->
-    <rect width="948" height="200" rx="10" fill="#fafafa" stroke="#4f46e5" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <g transform="translate(36, 115)">
+    <!-- Stage 1: Hardware Binding -->
+    <g transform="translate(0, 0)" filter="url(#shadow)">
+      <rect width="216" height="225" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+      <rect width="216" height="34" rx="8" fill="#f0f9ff"/>
+      <rect y="24" width="216" height="10" fill="#f0f9ff"/>
+      
+      <!-- Badge -->
+      <circle cx="20" cy="17" r="10" fill="#0284c7"/>
+      <text x="17" y="21" class="step-num">1</text>
+      <text x="36" y="21" class="card-title" fill="#0369a1">Hardware Binding</text>
+
+      <g transform="translate(14, 48)">
+        <text x="0" y="14" class="card-sub" fill="#0284c7">Local Machine Fingerprint</text>
+        <rect x="0" y="22" width="188" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="8" y="38" class="mono" fill="#0f172a">SHA-256(CPU+MAC+OS)</text>
+
+        <text x="0" y="70" class="card-desc">• Extracted via native Node modules</text>
+        <text x="0" y="90" class="card-desc">• Binds software to physical PC</text>
+        <text x="0" y="110" class="card-desc">• Prevents USB snapshot cloning</text>
+        <text x="0" y="138" font-size="10.5" font-weight="700" fill="#0284c7">CLIENT RUNTIME</text>
+      </g>
+    </g>
+
+    <!-- Connector 1 -> 2 -->
+    <line x1="222" y1="112" x2="236" y2="112" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- Stage 2: Cloud Entitlement Audit -->
+    <g transform="translate(242, 0)" filter="url(#shadow)">
+      <rect width="216" height="225" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+      <rect width="216" height="34" rx="8" fill="#f0fdf4"/>
+      <rect y="24" width="216" height="10" fill="#f0fdf4"/>
+
+      <circle cx="20" cy="17" r="10" fill="#15803d"/>
+      <text x="17" y="21" class="step-num">2</text>
+      <text x="36" y="21" class="card-title" fill="#15803d">Quota Audit</text>
+
+      <g transform="translate(14, 48)">
+        <text x="0" y="14" class="card-sub" fill="#15803d">Supabase PostgreSQL Gate</text>
+        <rect x="0" y="22" width="188" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="8" y="38" class="mono" fill="#0f172a">active &lt; max_devices</text>
+
+        <text x="0" y="70" class="card-desc">• Queries master license_keys</text>
+        <text x="0" y="90" class="card-desc">• Verifies revocation &amp; expiry</text>
+        <text x="0" y="110" class="card-desc">• Rejects unauthorized machines</text>
+        <text x="0" y="138" font-size="10.5" font-weight="700" fill="#15803d">CLOUD GATEWAY</text>
+      </g>
+    </g>
+
+    <!-- Connector 2 -> 3 -->
+    <line x1="464" y1="112" x2="478" y2="112" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- Stage 3: Asymmetric RSA-2048 Minting -->
+    <g transform="translate(484, 0)" filter="url(#shadow)">
+      <rect width="216" height="225" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+      <rect width="216" height="34" rx="8" fill="#eef2ff"/>
+      <rect y="24" width="216" height="10" fill="#eef2ff"/>
+
+      <circle cx="20" cy="17" r="10" fill="#4f46e5"/>
+      <text x="17" y="21" class="step-num">3</text>
+      <text x="36" y="21" class="card-title" fill="#4338ca">RSA-2048 Minting</text>
+
+      <g transform="translate(14, 48)">
+        <text x="0" y="14" class="card-sub" fill="#4338ca">Private Key Signature</text>
+        <rect x="0" y="22" width="188" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="8" y="38" class="mono" fill="#0f172a">RSA-PSS (SHA-256)</text>
+
+        <text x="0" y="70" class="card-desc">• Canonicalizes payload JSON</text>
+        <text x="0" y="90" class="card-desc">• Cryptographic digital signature</text>
+        <text x="0" y="110" class="card-desc">• Packages Base64 .lic envelope</text>
+        <text x="0" y="138" font-size="10.5" font-weight="700" fill="#4338ca">SIGNING AUTHORITY</text>
+      </g>
+    </g>
+
+    <!-- Connector 3 -> 4 -->
+    <line x1="706" y1="112" x2="720" y2="112" stroke="#4f46e5" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- Stage 4: Offline Verification & Drift Guard -->
+    <g transform="translate(726, 0)" filter="url(#shadow)">
+      <rect width="202" height="225" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+      <rect width="202" height="34" rx="8" fill="#fffbeb"/>
+      <rect y="24" width="202" height="10" fill="#fffbeb"/>
+
+      <circle cx="20" cy="17" r="10" fill="#b45309"/>
+      <text x="17" y="21" class="step-num">4</text>
+      <text x="36" y="21" class="card-title" fill="#b45309">Offline &amp; Drift Guard</text>
+
+      <g transform="translate(14, 48)">
+        <text x="0" y="14" class="card-sub" fill="#b45309">Embedded Public Key</text>
+        <rect x="0" y="22" width="174" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="8" y="38" class="mono" fill="#0f172a">24h Drift Guard</text>
+
+        <text x="0" y="70" class="card-desc">• Zero network validation</text>
+        <text x="0" y="90" class="card-desc">• Detects clock rewinds &gt; 24h</text>
+        <text x="0" y="110" class="card-desc">• Challenge-response reset</text>
+        <text x="0" y="138" font-size="10.5" font-weight="700" fill="#b45309">AIR-GAPPED SHIELD</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- BOTTOM PROTOCOL SUMMARY FOOTER                                 -->
+  <!-- ============================================================== -->
+  <g transform="translate(36, 365)">
+    <rect width="928" height="48" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
     
-    <!-- Phase Tag -->
-    <g transform="translate(18, -12)">
-      <rect width="320" height="24" rx="5" fill="#4f46e5"/>
-      <text x="12" y="16" class="phase-label" fill="#ffffff">PHASE 1: MACHINE-BOUND ACTIVATION FLOW</text>
-    </g>
-
-    <!-- STEP 1: Desktop HWID Request -->
-    <g transform="translate(18, 22)" filter="url(#cardShadow)">
-      <rect width="210" height="160" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="210" height="34" rx="8" fill="url(#skyGrad)"/>
-      <rect y="24" width="210" height="10" fill="url(#skyGrad)"/>
-      <text x="10" y="22" class="card-title">1. Client Request</text>
-
-      <g transform="translate(10, 44)">
-        <text x="0" y="14" class="pill-text">Compute SHA-256 HWID</text>
-        <text x="0" y="28" class="mono" font-size="8.5" fill="#64748b">CPU + MAC + OS Hash</text>
-        <text x="0" y="44" class="pill-text">POST /activate</text>
-        <text x="0" y="58" class="mono" font-size="8.5" fill="#0284c7">{ key, fingerprint, host }</text>
-      </g>
-    </g>
-
-    <line x1="234" y1="102" x2="252" y2="102" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrowRight)"/>
-
-    <!-- STEP 2: Entitlement & Quota Audit -->
-    <g transform="translate(254, 22)" filter="url(#cardShadow)">
-      <rect width="210" height="160" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="210" height="34" rx="8" fill="url(#emeraldGrad)"/>
-      <rect y="24" width="210" height="10" fill="url(#emeraldGrad)"/>
-      <text x="10" y="22" class="card-title">2. Supabase Audit</text>
-
-      <g transform="translate(10, 44)">
-        <text x="0" y="14" class="pill-text">Query license_keys</text>
-        <text x="0" y="28" class="pill-sub">Verify expiry &amp; revocation</text>
-        <text x="0" y="44" class="pill-text">Device Quota Guard</text>
-        <text x="0" y="58" class="pill-sub">active_devices &lt; max_devices</text>
-        <text x="0" y="74" class="pill-sub" fill="#059669">Strict 1-device machine lock</text>
-      </g>
-    </g>
-
-    <line x1="470" y1="102" x2="488" y2="102" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrowRight)"/>
-
-    <!-- STEP 3: RSA-2048 Signing Authority -->
-    <g transform="translate(490, 22)" filter="url(#cardShadow)">
-      <rect width="210" height="160" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="210" height="34" rx="8" fill="url(#purpleGrad)"/>
-      <rect y="24" width="210" height="10" fill="url(#purpleGrad)"/>
-      <text x="10" y="22" class="card-title">3. RSA-2048 Signer</text>
-
-      <g transform="translate(10, 44)">
-        <text x="0" y="14" class="pill-text">Canonicalize JSON</text>
-        <text x="0" y="28" class="pill-sub">Alphabetical key sorting</text>
-        <text x="0" y="44" class="pill-text">RSA-PSS SHA-256</text>
-        <text x="0" y="58" class="pill-sub">Private key asymmetric seal</text>
-        <text x="0" y="74" class="pill-sub" fill="#4f46e5">Mints Base64 .lic Envelope</text>
-      </g>
-    </g>
-
-    <line x1="706" y1="102" x2="724" y2="102" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrowRight)"/>
-
-    <!-- STEP 4: Offline Installation -->
-    <g transform="translate(726, 22)" filter="url(#cardShadow)">
-      <rect width="204" height="160" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="204" height="34" rx="8" fill="url(#amberGrad)"/>
-      <rect y="24" width="204" height="10" fill="url(#amberGrad)"/>
-      <text x="10" y="22" class="card-title">4. Offline Persistence</text>
-
-      <g transform="translate(10, 44)">
-        <text x="0" y="14" class="pill-text">Store in SQLite WAL</text>
-        <text x="0" y="28" class="pill-sub">Atomic write to licenses table</text>
-        <text x="0" y="44" class="pill-text">Public Key Verification</text>
-        <text x="0" y="58" class="pill-sub">Embedded key_001.pub check</text>
-        <text x="0" y="74" class="pill-sub" fill="#d97706">100% Offline Valid State</text>
-      </g>
-    </g>
-  </g>
-
-  <!-- ============================================================== -->
-  <!-- PHASE 2: PERIODIC ANTI-TAMPER HEARTBEAT & CHRONOMETRIC AUDIT   -->
-  <!-- ============================================================== -->
-  <g transform="translate(36, 335)">
-    <!-- Phase Container -->
-    <rect width="948" height="195" rx="10" fill="#fafafa" stroke="#059669" stroke-width="1.5" stroke-dasharray="5 3"/>
-
-    <!-- Phase Tag -->
-    <g transform="translate(18, -12)">
-      <rect width="360" height="24" rx="5" fill="#059669"/>
-      <text x="12" y="16" class="phase-label" fill="#ffffff">PHASE 2: PERIODIC ANTI-TAMPER HEARTBEAT &amp; AUDIT</text>
-    </g>
-
-    <!-- BOX 1: Scheduled Heartbeat -->
-    <g transform="translate(18, 22)" filter="url(#cardShadow)">
-      <rect width="280" height="155" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="280" height="32" rx="8" fill="url(#emeraldGrad)"/>
-      <rect y="22" width="280" height="10" fill="url(#emeraldGrad)"/>
-      <text x="12" y="21" class="card-title">Hourly Heartbeat Dispatch</text>
-
-      <g transform="translate(12, 42)">
-        <text x="0" y="14" class="pill-text">POST /sync-heartbeat</text>
-        <text x="0" y="28" class="mono" font-size="8.5" fill="#64748b">clientSystemTime + dbState</text>
-        <text x="0" y="44" class="pill-text">Background Daemon</text>
-        <text x="0" y="58" class="pill-sub">Non-blocking background sync routine</text>
-        <text x="0" y="72" class="pill-sub" fill="#059669">Captures unmanipulated clock snapshots</text>
-      </g>
-    </g>
-
-    <!-- BOX 2: Anti-Clock Rewind Guard -->
-    <g transform="translate(318, 22)" filter="url(#cardShadow)">
-      <rect width="300" height="155" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="300" height="32" rx="8" fill="url(#amberGrad)"/>
-      <rect y="22" width="300" height="10" fill="url(#amberGrad)"/>
-      <text x="12" y="21" class="card-title">24h Anti-Clock Rewind Guard</text>
-
-      <g transform="translate(12, 42)">
-        <text x="0" y="14" class="pill-text">Chronometric Drift Evaluation</text>
-        <text x="0" y="28" class="mono" font-size="8.5" fill="#b45309">serverTime - clientTime &gt; 86400000ms</text>
-        <text x="0" y="44" class="pill-text">Security Lockout Response</text>
-        <text x="0" y="58" class="pill-sub">Logs CLOCK_REWIND_DETECTED to audit</text>
-        <text x="0" y="72" class="pill-sub" fill="#b91c1c">Locks client into Grace / Locked state</text>
-      </g>
-    </g>
-
-    <!-- BOX 3: Database Manipulation Audit -->
-    <g transform="translate(638, 22)" filter="url(#cardShadow)">
-      <rect width="292" height="155" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
-      <rect width="292" height="32" rx="8" fill="url(#purpleGrad)"/>
-      <rect y="22" width="292" height="10" fill="url(#purpleGrad)"/>
-      <text x="12" y="21" class="card-title">Database Integrity &amp; Renewal</text>
-
-      <g transform="translate(12, 42)">
-        <text x="0" y="14" class="pill-text">Tamper Audit Gate</text>
-        <text x="0" y="28" class="pill-sub">Alerts if local valid_until &gt; cloud record</text>
-        <text x="0" y="44" class="pill-text">Seamless Auto-Renewal</text>
-        <text x="0" y="58" class="pill-sub">If cloud record extended, re-signs fresh blob</text>
-        <text x="0" y="72" class="pill-sub" fill="#4f46e5">Normal sync: updates last_sync_at</text>
-      </g>
-    </g>
+    <text x="16" y="28" font-size="12" font-weight="700" fill="#0f172a">CRYPTOGRAPHIC ASSURANCE:</text>
+    <text x="210" y="28" font-size="12" font-weight="500" fill="#475569">Zero network calls required for daily operation &nbsp;•&nbsp; Hardware-bound against software piracy &nbsp;•&nbsp; Tamper-evident clock auditing</text>
   </g>
 </svg>
