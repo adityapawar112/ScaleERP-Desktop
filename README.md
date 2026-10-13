@@ -7,7 +7,7 @@
   <p><b>High-velocity, offline-first enterprise ERP and counter billing engine engineered for wholesale distributors, godown operators, and agro-retail networks.</b></p>
 
   <p>
-    <a href="https://scaleerp.vercel.app"><img src="https://img.shields.io/badge/Live_Web_Portal-scaleerp.vercel.app-2563eb?style=flat-square&logo=vercel&logoColor=white" alt="Live Web Portal" /></a>
+    <a href="https://scale-erp.vercel.app"><img src="https://img.shields.io/badge/Live_Web_Portal-scale--erp.vercel.app-2563eb?style=flat-square&logo=vercel&logoColor=white" alt="Live Web Portal" /></a>
     <a href="https://github.com/adityapawar112/ScaleERP-Web"><img src="https://img.shields.io/badge/Companion_Repo-ScaleERP--Web-4f46e5?style=flat-square&logo=github&logoColor=white" alt="Companion Repo" /></a>
     <img src="https://img.shields.io/badge/Runtime-Electron_41-475569?style=flat-square&logo=electron&logoColor=white" alt="Electron 41" />
     <img src="https://img.shields.io/badge/Frontend-React_19.2-0284c7?style=flat-square&logo=react&logoColor=white" alt="React 19" />
@@ -18,7 +18,7 @@
   </p>
 
   <p>
-    <a href="https://scaleerp.vercel.app"><b>Explore Live Cloud Portal</b></a> &nbsp;•&nbsp;
+    <a href="https://scale-erp.vercel.app"><b>Explore Live Cloud Portal</b></a> &nbsp;•&nbsp;
     <a href="docs/README.md"><b>Architecture &amp; Engineering Specs</b></a> &nbsp;•&nbsp;
     <a href="https://github.com/adityapawar112/ScaleERP-Web"><b>ScaleERP-Web Repository</b></a> &nbsp;•&nbsp;
     <a href="#-quickstart--installation"><b>Developer Setup</b></a> &nbsp;•&nbsp;
@@ -34,7 +34,7 @@
 ScaleERP is a unified full-stack ecosystem engineered to solve the operational vulnerabilities of generic cloud software in regional commerce hubs and rural godowns. It is split into two standalone repositories:
 
 1. **`ScaleERP-Desktop` (This Repository)**: The client application installed on the store workstation. Built with Electron 41, React 19, and an embedded SQLite 3 engine running in Write-Ahead Logging (WAL) mode. It provides sub-millisecond counter billing, native 80mm ESC/POS thermal printing, and complete operational autonomy during internet blackouts.
-2. **[`ScaleERP-Web`](https://github.com/adityapawar112/ScaleERP-Web) (Companion Cloud Repository)**: The central control plane live at [scaleerp.vercel.app](https://scaleerp.vercel.app). Built with Next.js 15 App Router and Supabase PostgreSQL. It acts as the cryptographic root of trust, issuing machine-bound RSA-2048 signed `.lic` blobs, auditing telemetry heartbeats, and hosting public technical documentation.
+2. **[`ScaleERP-Web`](https://github.com/adityapawar112/ScaleERP-Web) (Companion Cloud Repository)**: The central control plane live at [scale-erp.vercel.app](https://scale-erp.vercel.app). Built with Next.js 15 App Router and Supabase PostgreSQL. It acts as the cryptographic root of trust, issuing machine-bound RSA-2048 signed `.lic` blobs, auditing telemetry heartbeats, and hosting public technical documentation.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────┐
